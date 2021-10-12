@@ -12,14 +12,14 @@
     <nav>
         <ul class="menu">
 
-            <ul>
-                <li><a href="#">Exemplos</a>
-                    <?php
+
+            <li><a href="#">Exemplos</a>
+                <ul><?php
                     for ($k = 1; $k <= 7; $k++) {
                         echo '<li><a href="ex' . $k . '.php">Ex ' . $k . '</a></li>';
                     }
                     ?>
-            </ul>
+                </ul>
             </li>
             <li><a href="https://github.com/silvaotavio1/exercicios-php">Reposiorio</a></li>
             <!-- <li><a href="#">Ex 1</a></li> -->
