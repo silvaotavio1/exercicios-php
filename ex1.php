@@ -53,7 +53,7 @@ function inverterArray()
 
     $distancia = $num_elementos - $num_trocas - 1;
 
-    for($k=0; $k<$num_trocas; $k++)
+    for($k=$num_trocas-1; $k>=0; $k--)
     {
         $aux = $array[$k];
         $array[$k] = $array[$num_elementos - 1 - $k];
