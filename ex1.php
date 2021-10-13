@@ -6,10 +6,10 @@
 
 <?php
 
-echo "<br>Array antes de sofrer alteração";
+echo "<br>Array antes de sofrer alteração: ";
 printArray(criarArray());
 
-echo "<br>Array após sofrer alteração";
+echo "<br>Array após sofrer alteração: ";
 printArray(criarArray());
 
 function defineInversao()
@@ -43,6 +43,24 @@ function printArray($array){
         echo $array[$k] . ((($k+1)==sizeof($array))? "": ",");
     }
     echo "]</b>";
+}
+
+function inverterArray()
+{
+    $array = criarArray();
+    $num_trocas = defineInversao();
+    $num_elementos = definePosicoes();//poderia pegar o sizeof($array)
+
+    $distancia = $num_elementos - $num_trocas;
+
+    for($k=0; $k<($num_elementos - $distancia); $k++)
+    {
+        $aux = $array[$k];
+        $array[$k] = $array[$num_elementos-$num_trocas-$k];
+        $array[$num_elementos-$num_trocas-$k] = $aux;
+    }
+
+    return $array;
 }
 
 ?>
