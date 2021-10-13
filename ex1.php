@@ -10,7 +10,7 @@ echo "<br>Array antes de sofrer alteração: ";
 printArray(criarArray());
 
 echo "<br>Array após sofrer alteração: ";
-printArray(criarArray());
+printArray(inverterArray());
 
 function defineInversao()
 {
@@ -56,8 +56,8 @@ function inverterArray()
     for($k=0; $k<($num_elementos - $distancia); $k++)
     {
         $aux = $array[$k];
-        $array[$k] = $array[$num_elementos-$num_trocas-$k];
-        $array[$num_elementos-$num_trocas-$k] = $aux;
+        $array[$k] = $array[$distancia-$k];
+        $array[$distancia-$k] = $aux;
     }
 
     return $array;
