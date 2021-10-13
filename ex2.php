@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Exercicio 1</title>
+    <title>Exercicio 2</title>
 </head>
 
 <form action="ex1.php" method="post">
@@ -17,7 +17,7 @@
 <?php
 
 echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArray());
+printArray(criarArrayR());
 
 echo "<br>Array após sofrer alteração: ";
 printArray(inverterArray());

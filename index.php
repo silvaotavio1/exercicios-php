@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Menu Dropdown Horizontal - Linha de Código</title>
     <!-- Aqui chamamos o nosso arquivo css externo -->
-    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <link rel="stylesheet" type="text/css" href="inc/css/estilo.css" />
 </head>
 
 <body>
