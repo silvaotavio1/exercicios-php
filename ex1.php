@@ -38,9 +38,9 @@ function criarArray()
 
 function printArray($array){
     echo "<b>[";
-    foreach($array as $item)
+    for($k=0; $k<sizeof($array); $k++)
     {
-        echo $item . ",";
+        echo $array[$k] . (($k+1)==sizeof($array))? "": ",";
     }
     echo "</b>]";
 }
