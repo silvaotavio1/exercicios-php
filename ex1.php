@@ -51,14 +51,14 @@ function inverterArray()
     $num_trocas = defineInversao();
     $num_elementos = definePosicoes();//poderia pegar o sizeof($array)
 
-    $distancia = $num_elementos - $num_trocas - 1;
-
-    for($k=$num_trocas-1; $k>=0; $k--)
+    $distancia = $num_elementos - $num_trocas;
+    
+    $aux = $array[0];
+    for($k=0; $k<$distancia; $k++)
     {
-        $aux = $array[$k];
-        $array[$k] = $array[$num_elementos - 1 - $k];
-        $array[$num_elementos - 1 - $k] = $aux;
+        $array[$k+1] = $array[$k];
     }
+    $array[$k] = $aux;
 
     return $array;
 }
