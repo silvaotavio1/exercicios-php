@@ -1,6 +1,6 @@
 <form action="ex1.php" method="post">
- <p>Número de posições no array: <input type="text" name="name" /></p>
- <p>Numero de inversões: <input type="text" name="age" /></p>
+ <p>Número de posições no array: <input value="<?php echo $_POST['numPosicoes'];?>" type="number" name="numPosicoes" /></p>
+ <p>Numero de inversões: <input value="<?php echo $_POST['numPosicoes'];?>" type="number" name="numInversoes" /></p>
  <p><input type="submit" /></p>
 </form>
 
@@ -8,5 +8,7 @@
 
 echo "<br><pre>";
 print_r($_POST);
+
+
 
 ?>
