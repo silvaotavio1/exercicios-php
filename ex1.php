@@ -42,7 +42,7 @@ function printArray($array){
     {
         echo $array[$k] . (($k+1)==sizeof($array))? "": ",";
     }
-    echo "</b>]";
+    echo "]</b>";
 }
 
 ?>
