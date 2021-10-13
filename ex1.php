@@ -6,11 +6,11 @@
 
 <?php
 
-echo "<br>Array antes de sofrer alteração<pre>";
-print_r(criarArray());
+echo "<br>Array antes de sofrer alteração";
+printArray(criarArray());
 
-echo "<br>Array após sofrer alteração<pre>";
-print_r(criarArray());
+echo "<br>Array após sofrer alteração";
+printArray(criarArray());
 
 function defineInversao()
 {
@@ -34,6 +34,15 @@ function criarArray()
     }
 
     return $retorno;
+}
+
+function printArray($array){
+    echo "<b>[";
+    foreach($array as $item)
+    {
+        echo $item . ",";
+    }
+    echo "</b>]";
 }
 
 ?>
