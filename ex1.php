@@ -6,8 +6,11 @@
 
 <?php
 
-echo "<br><pre>";
-print_r($_POST);
+echo "<br>Array antes de sofrer alteração<pre>";
+print_r(criarArray());
+
+echo "<br>Array após sofrer alteração<pre>";
+print_r(criarArray());
 
 function defineInversao()
 {
@@ -19,6 +22,18 @@ function definePosicoes()
 {
     $retorno = $_POST['numPosicoes'];
     return ($retorno < 1? 0: $retorno);
+}
+
+function criarArray()
+{
+    $retorno = array();
+
+    for($k=0; $k<definePosicoes(); $k++)
+    {
+        $retorno[$k] = $k+1;
+    }
+
+    return $retorno;
 }
 
 ?>
