@@ -40,7 +40,7 @@ function printArray($array){
     echo "<b>[";
     for($k=0; $k<sizeof($array); $k++)
     {
-        echo $array[$k] . (($k+1)==sizeof($array))? "": ",";
+        echo $array[$k] . ((($k+1)==sizeof($array))? "": ",");
     }
     echo "]</b>";
 }
