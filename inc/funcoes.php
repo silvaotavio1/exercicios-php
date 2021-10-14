@@ -209,21 +209,8 @@ function triangulos($n = 0, $tot)
 function trianguloPorNumero($n=6)//6 é o menor valor possivel para a soma de lados
 {
     $maior = intval($n/2);
-    $medio = intval($maior/2);
-
-    if($maior == $medio)
-    {
-        $maior = $maior + 1;
-    }
-
-    $menor = $n - $maior - $medio;
-    
-    if($maior == $menor)
-    {
-        $maior = $maior + 1;
-    }
-
+    $medio = intval($n/3);
     $menor = $n - $maior - $medio;
 
-    return array($maior, $medio, $menor);
+    return array($menor, $medio, $maior);
 }
