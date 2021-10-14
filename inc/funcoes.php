@@ -67,6 +67,12 @@ function criarArrayR()
 function ordenaArray($array)
 {
     $tam = sizeof($array);
+
+    if($tam < 2)
+    {
+        return $array;
+    }
+
     $pivo = $array[0];
     $aux = $pivo; //deixamos livre para troca da posicao zero
     $e = 0; //pergunta se a direita eh maior // se sim vai para a pos vazia e passa a bola // se não $e++ 
@@ -116,4 +122,31 @@ function ordenaArray($array)
     $array[$e] = $aux;
 
     return $array;
+}
+
+function quicksort(&$vet, $ini, $fim)
+{
+    $i = $ini;
+    $j = $fim;
+    $dir = 1;
+    while ($i < $j) {
+        if ($vet[$i] > $vet[$j]) {
+            $aux = $vet[$i];
+            $vet[$i] = $vet[$j];
+            $vet[$j] = $aux;
+            $dir = -$dir;
+        }
+        if ($dir == 1) {
+            $j--;
+        } else {
+            $i++;
+        }
+    }
+    $k = $i;
+    if ($ini < $fim) {
+        quicksort($vet, $ini, $k - 1);
+    }
+    if ($i < $fim) {
+        quicksort($vet, $k + 1, $fim);
+    }
 }
