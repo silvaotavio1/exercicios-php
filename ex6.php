@@ -15,7 +15,7 @@ include("inc/funcoes.php");
     <p>Numero de inversões: <input value="<?php echo defineInversao() ?>" type="number" name="numInversoes" /></p>
     <p>
         <input type="submit">Executar</input>
-        <input type="submit" onclick="window.open('/testephp/', '_self')">Voltar</input>
+        <button type="submit" onclick="window.open('/testephp/', '_self')">Voltar</button>
     </p>
 </form>
 
