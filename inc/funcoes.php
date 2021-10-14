@@ -162,28 +162,39 @@ function diasMes($ano, $mes)
 
 
 //Ex4
-function arranjoSimples($k, $n=3)
+function arranjoSimples($n, $k=3)
 {
-    $k<3?$k=0:null;
+    //n!
+    $n<=0?$n=0:null;
     
-    $fatN=$k;
-    for($i=$k;$i>1;$i--)
+    $fatN=$n;
+    for($i=$n;$i>1;$i--)
     {
         $fatN = $fatN * ($i-1);
     }
+    echo "<br><br><br>fatN: " . $fatN . "<br><br><br>";
 
-    $j = $k - $n;
+    //k!
+    $k<3?$k=0:null;
+    
+    $fatD0=$k;
+    for($i=$k;$i>1;$i--)
+    {
+        $fatD0 = $fatD0 * ($i-1);
+    }
+    echo "<br><br><br>fatD0: " . $fatD0 . "<br><br><br>";
+
+    //(n - k)!
+    $j = $n - $k;
     $j<=0?$j=1:null;
 
-    echo "<br><br><br>" . $fatN;
-
-    $fatD=$j;
+    $fatD1=$j;
     for($i=$j;$i>1;$i--)
     {
-        $fatD = $fatD * ($i-1);
+        $fatD1 = $fatD1 * ($i-1);
     }
+    echo "<br><br><br>fatN: " . $fatD1 . "<br><br><br>";
 
-    echo "<br><br><br>" . $fatD . "<br><br><br>";
-
-    return $fatN / $fatD;
+    //k! / n!(n - k)!
+    return $fatN / ($fatD0 * $fatD1);
 }
