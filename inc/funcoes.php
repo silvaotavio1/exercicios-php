@@ -210,6 +210,12 @@ function trianguloPorNumero($n=6)//6 é o menor valor possivel para a soma de la
 {
     $maior = intval($n/2);
     $medio = intval($maior/2);
+
+    if($maior == $medio)
+    {
+        $maior = $maior + 1;
+    }
+
     $menor = $n - $maior - $medio;
 
     return array($maior, $medio, $menor);
