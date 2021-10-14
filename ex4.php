@@ -30,6 +30,7 @@ printArrayL($array);
 echo "<br>Numero de possibilidades: <b>[";
 echo combinacao(sizeof($array)) . "]</b><br>";
 
+echo "<br>Exemplo de possibilidades: <b>";
 triangulos(sizeof($array));
 
 ?>
