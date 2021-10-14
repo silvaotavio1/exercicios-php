@@ -157,7 +157,7 @@ function printArrayL($array)
     for ($k = 0; $k < sizeof($array); $k++) {
         echo $letras[$array[$k]] . ((($k + 1) == sizeof($array)) ? "" : ",");
     }
-    echo "]</b><br>";
+    echo "]</b>";
 }
 
 function combinacao($n, $k = 3)
