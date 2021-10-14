@@ -28,10 +28,10 @@ function criarArrayR()
     $retorno = array();
 
     for ($k = 0; $k < definePosicoes(); $k++) {
-        $retorno[$k] = $k + 1;
+        $retorno[$k] = rand(0, definePosicoes());
     }
 
-    return array_Rand($retorno, 1);
+    return $retorno;
 }
 
 function printArray($array)
