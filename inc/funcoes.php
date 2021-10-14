@@ -164,7 +164,7 @@ function diasMes($ano, $mes)
 //Ex4
 function printArrayL($array)
 {
-    $letras = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    $letras = array(null, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
     echo "<b>[";
     for ($k = 0; $k < sizeof($array); $k++) {
         echo $letras[$array[$k]] . ((($k + 1) == sizeof($array)) ? "" : ",");
