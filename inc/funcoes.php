@@ -108,7 +108,7 @@ function ordenaArray($array)
         $cont++;
 
         if($cont > 5000)
-            break;
+            exit('erro');
     }
 
     $array[$e] = $aux;
