@@ -196,13 +196,21 @@ function triangulos($n = 0, $tot)
     if ($n < 3)
         return '[]';
 
-    for ($j = 1; $j <= $tot; $j++) {
-        $retorno = array();
-        for ($i = 1; $i <= 3; $i++) {
-            $retorno[($i * $j - 1)%3] = $i;
-        }
+    $minimo = 6;
+    $maximo = 3*$n - 3;
 
-        printArrayL($retorno);
-        echo (($j)==$tot)? "": ", ";
+    for($k=$minimo;$k<=$maximo;$k++)
+    {
+        printArrayL(trianguloPorNumero($k));
+        echo ($k==$maximo)?'':', ';
     }
+}
+
+function trianguloPorNumero($n=6)//6 é o menor valor possivel para a soma de lados
+{
+    $maior = intval($n/2);
+    $medio = intval($maior/2);
+    $menor = $n - $maior - $medio;
+
+    return array($maior, $medio, $menor);
 }
