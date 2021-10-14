@@ -164,20 +164,18 @@ function diasMes($ano, $mes)
 //Ex4
 function arranjoSimples($k, $n=3)
 {
-    $fatN=0;
-    for($i=$k;$i>0;$i--)
+    $fatN=1;
+    for($i=$k;$i>1;$i--)
     {
-        $fatN = $fatN * $i;
+        $fatN = $fatN * $i * ($i-1);
     }
-    $k<=0?$fatN=1:null;
 
     $j = $k - $n;
-    $fatD=0;
-    for($i=$j;$i>0;$i--)
+    $fatD=1;
+    for($i=$j;$i>1;$i--)
     {
         $fatD = $fatD * $i;
     }
-    $j<=0?$fatD=1:null;
 
     return $fatN / $fatD;
 }
