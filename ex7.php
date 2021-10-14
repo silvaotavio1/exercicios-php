@@ -13,7 +13,10 @@ include("inc/funcoes.php");
 <form action="ex1.php" method="post">
     <p>Número de posições no array: <input value="<?php echo definePosicoes(); ?>" type="number" name="numPosicoes" /></p>
     <p>Numero de inversões: <input value="<?php echo defineInversao() ?>" type="number" name="numInversoes" /></p>
-    <p><input type="submit" /></p>
+    <p>
+        <input type="submit">Executar</input>
+        <input type="submit" onclick="window.open('/testephp/', '_self')">Voltar</input>
+    </p>
 </form>
 
 </html>
