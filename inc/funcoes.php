@@ -96,7 +96,7 @@ function ordenaArray($array)
         {
             if ($array[$e] > $pivo) 
             {
-                $array[$d] = $array[$d];
+                $array[$d] = $array[$e];
                 $bola = 'd';
                 $d--;
             }
