@@ -11,8 +11,8 @@ include("inc/funcoes.php");
 </head>
 
 <form action="ex3.php" method="post">
-    <p>Número de posições no array: <input value="<?php echo definePosicoes(); ?>" type="number" name="numPosicoes" /></p>
-    <p>Numero de inversões: <input value="<?php echo defineInversao() ?>" type="number" name="numInversoes" /></p>
+    <p>Informe uma data <b>inicial</b> no formato dd/mm/yyyy: <input value="<?php echo $_POST['data']; ?>" type="text" name="dataini" /></p>
+    <p>Informe uma data <b>final</b> no formato dd/mm/yyyy: <input value="<?php echo $_POST['data']; ?>" type="text" name="datafim" /></p>
     <p>
         <button type="submit">Executar</button>
         <button type="button" onclick="window.open('/testephp/', '_self')">Voltar</button>
