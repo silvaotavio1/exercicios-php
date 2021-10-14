@@ -7,7 +7,7 @@ include("inc/funcoes.php");
 
 <head>
     <meta charset="UTF-8">
-    <title>Exercicio 1</title>
+    <title>Exercicio 5</title>
 </head>
 
 <form action="ex1.php" method="post">

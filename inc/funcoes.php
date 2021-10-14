@@ -31,7 +31,7 @@ function criarArrayR()
         $retorno[$k] = $k + 1;
     }
 
-    return shuffle($retorno);
+    return array_Rand($retorno, 1);
 }
 
 function printArray($array)
