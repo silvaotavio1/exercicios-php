@@ -164,7 +164,7 @@ function diasMes($ano, $mes)
 //Ex4
 function arranjoSimples($k, $n=3)
 {
-    $k<0?$k=0:null;
+    $k<3?$k=0:null;
     
     $fatN=1;
     for($i=$k;$i>1;$i--)
@@ -173,6 +173,8 @@ function arranjoSimples($k, $n=3)
     }
 
     $j = $k - $n;
+    $j<0?$j=0:null;
+
     $fatD=1;
     for($i=$j;$i>1;$i--)
     {
