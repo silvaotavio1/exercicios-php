@@ -196,5 +196,5 @@ function combinacao($n, $k=3)
     // echo "<br><br><br>fatD1: " . $fatD1 . "<br><br><br>";
 
     //k! / n!(n - k)!
-    return $fatN / ($fatD0 * $fatD1);
+    return intval($fatN / ($fatD0 * $fatD1));
 }
