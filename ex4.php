@@ -22,10 +22,12 @@ include("inc/funcoes.php");
 
 <?php
 
+$array = criarArray();
+
 echo "<br>Lados disponíveis: ";
-printArray(criarArray());
+printArray($array);
 
 echo "<br>Numero de possibilidades: ";
-printArray(arranjoSimples(sizeof(criarArray())));
+echo arranjoSimples(sizeof($array));
 
 ?>
