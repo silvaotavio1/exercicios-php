@@ -1,5 +1,6 @@
 <?php
 
+//Exemplo 1
 function defineInversao()
 {
     $retorno = $_POST['numInversoes'] > $_POST['numPosicoes'] ? $_POST['numPosicoes'] : $_POST['numInversoes'];
@@ -18,17 +19,6 @@ function criarArray()
 
     for ($k = 0; $k < definePosicoes(); $k++) {
         $retorno[$k] = $k + 1;
-    }
-
-    return $retorno;
-}
-
-function criarArrayR()
-{
-    $retorno = array();
-
-    for ($k = 0; $k < definePosicoes(); $k++) {
-        $retorno[$k] = rand(0, definePosicoes());
     }
 
     return $retorno;
@@ -62,4 +52,66 @@ function inverterArray()
     return $array;
 }
 
-?>
+//Exemplo 2
+function criarArrayR()
+{
+    $retorno = array();
+
+    for ($k = 0; $k < definePosicoes(); $k++) {
+        $retorno[$k] = rand(0, definePosicoes());
+    }
+
+    return $retorno;
+}
+
+function ordenaArray($array)
+{
+    $tam = sizeof($array);
+    $pivo = $array[0];
+    $aux = $pivo; //deixamos livre para troca da posicao zero
+    $e = 0; //pergunta se a direita eh maior // se sim vai para a pos vazia e passa a bola // se não $e++ 
+    $d = $tam - 1; //Pergunta se o numero eh menor q o pivo // Se sim vai para a pos vazia e passa a bola // se não $d -- 
+
+    $bola = 'd';
+
+    $cont = 0;
+
+    while ($e <> $d) 
+    {
+        if ($bola == 'd') 
+        {
+            if ($array[$d] < $pivo) 
+            {
+                $array[$e] = $array[$d];
+                $bola = 'e';
+                $e++;
+            }
+            else
+            {
+                $d--;
+            }
+        }
+        
+        if ($bola == 'e') 
+        {
+            if ($array[$e] > $pivo) 
+            {
+                $array[$d] = $array[$d];
+                $bola = 'd';
+                $d--;
+            }
+            else
+            {
+                $e++;
+            }
+        }
+        $cont++;
+
+        if($cont > 5000)
+            break;
+    }
+
+    $array[$e] = $aux;
+
+    return $array;
+}

@@ -23,10 +23,12 @@ include("inc/funcoes.php");
 
 <?php
 
+$array = criarArrayR();
+
 echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArrayR());
+printArray($array);//criando array aleatorio para ordernar
 
 echo "<br>Array após sofrer alteração: ";
-printArray(inverterArray());
+printArray(ordenaArray($array));
 
 ?>
