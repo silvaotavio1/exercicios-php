@@ -31,8 +31,8 @@ echo "<br>Array após sofrer alteração: ";
 
 $cont_pares = 0;
 $cont_impares = 0;
-$pares = $array();
-$impares = $array();
+$pares = array();
+$impares = array();
 
 for ($k = 0; $k < sizeof($array); $k++) 
 {
