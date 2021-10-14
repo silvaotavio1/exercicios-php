@@ -68,8 +68,7 @@ function ordenaArray($array)
 {
     $tam = sizeof($array);
 
-    if($tam < 2)
-    {
+    if ($tam < 2) {
         return $array;
     }
 
@@ -82,38 +81,27 @@ function ordenaArray($array)
 
     $cont = 0;
 
-    while ($e <> $d) 
-    {
-        if ($bola == 'd') 
-        {
-            if ($array[$d] < $pivo) 
-            {
+    while ($e <> $d) {
+        if ($bola == 'd') {
+            if ($array[$d] < $pivo) {
                 $array[$e] = $array[$d];
                 $bola = 'e';
                 $e++;
-            }
-            else
-            {
+            } else {
                 $d--;
             }
-        }
-        
-        elseif ($bola == 'e') 
-        {
-            if ($array[$e] > $pivo) 
-            {
+        } elseif ($bola == 'e') {
+            if ($array[$e] > $pivo) {
                 $array[$d] = $array[$e];
                 $bola = 'd';
                 $d--;
-            }
-            else
-            {
+            } else {
                 $e++;
             }
         }
         $cont++;
 
-        if($cont > 5000)
+        if ($cont > 5000)
             exit('erro');
     }
 
@@ -124,29 +112,39 @@ function ordenaArray($array)
     return $array;
 }
 
-function quicksort(&$vet, $ini, $fim)
+// function for quick sort which calls partition function 
+// to arrange and split the list based on pivot element
+// quicksort is a recursive function
+function quicksort(&$Array, $left, $right)
 {
-    $i = $ini;
-    $j = $fim;
-    $dir = 1;
-    while ($i < $j) {
-        if ($vet[$i] > $vet[$j]) {
-            $aux = $vet[$i];
-            $vet[$i] = $vet[$j];
-            $vet[$j] = $aux;
-            $dir = -$dir;
-        }
-        if ($dir == 1) {
-            $j--;
-        } else {
+    if ($left < $right) {
+        $pivot = partition($Array, $left, $right);
+        quicksort($Array, $left, $pivot - 1);
+        quicksort($Array, $pivot + 1, $right);
+    }
+}
+
+// partition function arrange and split the list 
+// into two list based on pivot element
+// In this example, last element of list is chosen 
+// as pivot element. one list contains all elements 
+// less than the pivot element another list contains 
+// all elements greater than the pivot element
+function partition(&$Array, $left, $right)
+{
+    $i = $left;
+    $pivot = $Array[$right];
+    for ($j = $left; $j <= $right; $j++) {
+        if ($Array[$j] < $pivot) {
+            $temp = $Array[$i];
+            $Array[$i] = $Array[$j];
+            $Array[$j] = $temp;
             $i++;
         }
     }
-    $k = $i;
-    if ($ini < $fim) {
-        quicksort($vet, $ini, $k - 1);
-    }
-    if ($i < $fim) {
-        quicksort($vet, $k + 1, $fim);
-    }
+
+    $temp = $Array[$right];
+    $Array[$right] = $Array[$i];
+    $Array[$i] = $temp;
+    return $i;
 }
