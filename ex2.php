@@ -16,12 +16,12 @@
 
 <?php
 
+include("inc/funcoes.php");
+
 echo "<br>Array antes de sofrer alteração: ";
 printArray(criarArrayR());
 
 echo "<br>Array após sofrer alteração: ";
 printArray(inverterArray());
-
-include("inc/funcoes.php");
 
 ?>
