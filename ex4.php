@@ -27,7 +27,7 @@ $array = criarArray();
 echo "<br>Lados disponíveis: ";
 printArray($array);
 
-echo "<br>Numero de possibilidades: ";
-echo arranjoSimples(sizeof($array));
+echo "<br>Numero de possibilidades: <b>[";
+echo arranjoSimples(sizeof($array)) . "]</b>";
 
 ?>
