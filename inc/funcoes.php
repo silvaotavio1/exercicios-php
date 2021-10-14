@@ -172,7 +172,7 @@ function arranjoSimples($n, $k=3)
     {
         $fatN = $fatN * ($i-1);
     }
-    echo "<br><br><br>fatN: " . $fatN . "<br><br><br>";
+    // echo "<br><br><br>fatN: " . $fatN . "<br><br><br>";
 
     //k!
     $k<3?$k=0:null;
@@ -182,7 +182,7 @@ function arranjoSimples($n, $k=3)
     {
         $fatD0 = $fatD0 * ($i-1);
     }
-    echo "<br><br><br>fatD0: " . $fatD0 . "<br><br><br>";
+    // echo "<br><br><br>fatD0: " . $fatD0 . "<br><br><br>";
 
     //(n - k)!
     $j = $n - $k;
@@ -193,7 +193,7 @@ function arranjoSimples($n, $k=3)
     {
         $fatD1 = $fatD1 * ($i-1);
     }
-    echo "<br><br><br>fatD1: " . $fatD1 . "<br><br><br>";
+    // echo "<br><br><br>fatD1: " . $fatD1 . "<br><br><br>";
 
     //k! / n!(n - k)!
     return $fatN / ($fatD0 * $fatD1);
