@@ -111,6 +111,8 @@ function ordenaArray($array)
             exit('erro');
     }
 
+    echo "<br>$cont<br>";
+
     $array[$e] = $aux;
 
     return $array;
