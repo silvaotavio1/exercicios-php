@@ -64,23 +64,23 @@ function criarArrayR()
     return $retorno;
 }
 
-function quicksort(&$array, $esquerda, $direita)
+function quicksort(&$array, $esquerda, $direita, $ordem="C")
 {
     if ($esquerda < $direita) 
     {
-        $pivo = divisoria($array, $esquerda, $direita);
-        quicksort($array, $esquerda, $pivo - 1);
-        quicksort($array, $pivo + 1, $direita);
+        $pivo = divisoria($array, $esquerda, $direita, $ordem);
+        quicksort($array, $esquerda, $pivo - 1, $ordem);
+        quicksort($array, $pivo + 1, $direita, $ordem);
     }
 }
 
-function divisoria(&$array, $esquerda, $direita)
+function divisoria(&$array, $esquerda, $direita, $ordem="C")
 {
     $i = $esquerda;
     $pivo = $array[$direita];
     for ($j = $esquerda; $j <= $direita; $j++) 
     {
-        if ($array[$j] < $pivo) 
+        if (($array[$j] < $pivo && $ordem=="C") || ($array[$j] > $pivo && $ordem=="D")) 
         {
             $temp = $array[$i];
             $array[$i] = $array[$j];

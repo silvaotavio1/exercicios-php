@@ -28,7 +28,7 @@ echo "<br>Array antes de sofrer alteração: ";
 printArray($array);//criando array aleatorio para ordernar
 
 echo "<br>Array após sofrer alteração: ";
-quicksort($array, 0, sizeof($array) - 1);
+quicksort($array, 0, sizeof($array) - 1, "D");
 printArray($array);
 
 ?>
