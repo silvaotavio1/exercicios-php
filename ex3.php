@@ -23,6 +23,6 @@ include("inc/funcoes.php");
 
 <?php
 
-echo "<br>A diferença em dias eh de: " . diferencaDatas() . " dias";
+echo "<br>A diferença é de: " . diferencaDatas() . " dias";
 
 ?>
