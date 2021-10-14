@@ -199,7 +199,7 @@ function triangulos($n = 0, $tot)
     for ($j = 0; $j < $tot; $j++) {
         $retorno = array();
         for ($i = 1; $i <= 3; $i++) {
-            $retorno[($i + $j)%$i - 1] = $i;
+            $retorno[($i + $j)%3 - 1] = $i;
         }
 
         printArrayL($retorno);
