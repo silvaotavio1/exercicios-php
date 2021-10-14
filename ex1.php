@@ -1,3 +1,7 @@
+<?php
+include("inc/funcoes.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
@@ -15,8 +19,6 @@
 </html>
 
 <?php
-
-include("inc/funcoes.php");
 
 echo "<br>Array antes de sofrer alteração: ";
 printArray(criarArray());

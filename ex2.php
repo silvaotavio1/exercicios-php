@@ -1,9 +1,13 @@
+<?php
+include("inc/funcoes.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Exercicio 2</title>
+    <title>Exercicio 1</title>
 </head>
 
 <form action="ex1.php" method="post">
@@ -16,10 +20,8 @@
 
 <?php
 
-include("inc/funcoes.php");
-
 echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArrayR());
+printArray(criarArray());
 
 echo "<br>Array após sofrer alteração: ";
 printArray(inverterArray());

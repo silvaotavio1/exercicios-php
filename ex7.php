@@ -1,9 +1,13 @@
+<?php
+include("inc/funcoes.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Exercicio 7</title>
+    <title>Exercicio 1</title>
 </head>
 
 <form action="ex1.php" method="post">
@@ -15,8 +19,6 @@
 </html>
 
 <?php
-
-include("inc/funcoes.php");
 
 echo "<br>Array antes de sofrer alteração: ";
 printArray(criarArray());
