@@ -167,7 +167,7 @@ function arranjoSimples($k, $n=3)
     $k<3?$k=0:null;
     
     $fatN=$k;
-    for($i=$k;$i>1;$i--)
+    for($i=$k+1;$i>1;$i--)
     {
         $fatN = $fatN * ($i-1);
     }
@@ -176,7 +176,7 @@ function arranjoSimples($k, $n=3)
     $j<0?$j=0:null;
 
     $fatD=$j;
-    for($i=$j;$i>1;$i--)
+    for($i=$j+1;$i>1;$i--)
     {
         $fatD = $fatD * ($i-1);
     }
