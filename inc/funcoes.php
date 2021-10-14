@@ -64,24 +64,21 @@ function criarArrayR()
     return $retorno;
 }
 
-function quicksort(&$array, $esquerda, $direita, $ordem="C")
+function quicksort(&$array, $esquerda, $direita, $ordem = "C")
 {
-    if ($esquerda < $direita) 
-    {
+    if ($esquerda < $direita) {
         $pivo = divisoria($array, $esquerda, $direita, $ordem);
         quicksort($array, $esquerda, $pivo - 1, $ordem);
         quicksort($array, $pivo + 1, $direita, $ordem);
     }
 }
 
-function divisoria(&$array, $esquerda, $direita, $ordem="C")
+function divisoria(&$array, $esquerda, $direita, $ordem = "C")
 {
     $i = $esquerda;
     $pivo = $array[$direita];
-    for ($j = $esquerda; $j <= $direita; $j++) 
-    {
-        if (($array[$j] < $pivo && $ordem=="C") || ($array[$j] > $pivo && $ordem=="D")) 
-        {
+    for ($j = $esquerda; $j <= $direita; $j++) {
+        if (($array[$j] < $pivo && $ordem == "C") || ($array[$j] > $pivo && $ordem == "D")) {
             $temp = $array[$i];
             $array[$i] = $array[$j];
             $array[$j] = $temp;
@@ -119,7 +116,7 @@ function diferencaDatas()
 function diasAno($ano)
 {
     $ano = $ano - 1;
-    return $ano*365 + intval($ano/4);
+    return $ano * 365 + intval($ano / 4);
 }
 
 function diasMes($ano, $mes)
@@ -127,37 +124,28 @@ function diasMes($ano, $mes)
     $dias = 0;
     $mes = $mes - 1;
 
-    for($k=0;$k<12;$k++)
-    {
+    for ($k = 0; $k < 12; $k++) {
         $dias_soma = 30;
-        if($k%2==0 && $k<6 && $k <> 2)
-        {
-            $dias_soma = 31; 
+        if ($k % 2 == 0 && $k < 6 && $k <> 2) {
+            $dias_soma = 31;
         }
-        if($k%2==1 && $k>=6)
-        {
-            $dias_soma = 31; 
+        if ($k % 2 == 1 && $k >= 6) {
+            $dias_soma = 31;
         }
-        if($k == 2)
-        {
-            if($ano%4 == 0)
-            {
+        if ($k == 2) {
+            if ($ano % 4 == 0) {
                 $dias_soma = 29;
-            }
-            else
-            {
+            } else {
                 $dias_soma = 28;
             }
         }
 
-        if($mes > $k)
-        {
+        if ($mes > $k) {
             $dias = $dias + $dias_soma;
         }
     }
-    
-   return $dias;
 
+    return $dias;
 }
 
 
@@ -172,50 +160,49 @@ function printArrayL($array)
     echo "]</b><br>";
 }
 
-function combinacao($n, $k=3)
+function combinacao($n, $k = 3)
 {
     //n!
-    $n<=0?$n=0:null;
-    
-    $fatN=$n;
-    for($i=$n;$i>1;$i--)
-    {
-        $fatN = $fatN * ($i-1);
+    $n <= 0 ? $n = 0 : null;
+
+    $fatN = $n;
+    for ($i = $n; $i > 1; $i--) {
+        $fatN = $fatN * ($i - 1);
     }
 
     //k!
-    $k<3?$k=0:null;
-    
-    $fatD0=$k;
-    for($i=$k;$i>1;$i--)
-    {
-        $fatD0 = $fatD0 * ($i-1);
+    $k < 3 ? $k = 0 : null;
+
+    $fatD0 = $k;
+    for ($i = $k; $i > 1; $i--) {
+        $fatD0 = $fatD0 * ($i - 1);
     }
 
     //(n - k)!
     $j = $n - $k;
-    $j<=0?$j=1:null;
+    $j <= 0 ? $j = 1 : null;
 
-    $fatD1=$j;
-    for($i=$j;$i>1;$i--)
-    {
-        $fatD1 = $fatD1 * ($i-1);
+    $fatD1 = $j;
+    for ($i = $j; $i > 1; $i--) {
+        $fatD1 = $fatD1 * ($i - 1);
     }
 
     //k! / n!(n - k)!
     return intval($fatN / ($fatD0 * $fatD1));
 }
 
-function triangulos($n=0)
+function triangulos($n = 0, $tot)
 {
-    if($n<3)
-    return '[]'; 
-    
-    $retorno = array();
-    for($i=1;$i<=3;$i++)
-    {
-        $retorno[$i-1] = $i;
-    }
+    if ($n < 3)
+        return '[]';
 
-    printArrayL($retorno);
+    for ($j = 0; $j < $tot; $j++) {
+        $retorno = array();
+        for ($i = 1; $i <= 3; $i++) {
+            $retorno[($i + $j)%$i - 1] = $i;
+        }
+
+        printArrayL($retorno);
+        echo (($j+1)==$tot)? "": ", ";
+    }
 }
