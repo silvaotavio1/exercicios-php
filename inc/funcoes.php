@@ -162,6 +162,16 @@ function diasMes($ano, $mes)
 
 
 //Ex4
+function printArrayL($array)
+{
+    $letras = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    echo "<b>[";
+    for ($k = 0; $k < sizeof($array); $k++) {
+        echo $letras[$array[$k]] . ((($k + 1) == sizeof($array)) ? "" : ",");
+    }
+    echo "]</b>";
+}
+
 function combinacao($n, $k=3)
 {
     //n!
@@ -172,7 +182,6 @@ function combinacao($n, $k=3)
     {
         $fatN = $fatN * ($i-1);
     }
-    // echo "<br><br><br>fatN: " . $fatN . "<br><br><br>";
 
     //k!
     $k<3?$k=0:null;
@@ -182,7 +191,6 @@ function combinacao($n, $k=3)
     {
         $fatD0 = $fatD0 * ($i-1);
     }
-    // echo "<br><br><br>fatD0: " . $fatD0 . "<br><br><br>";
 
     //(n - k)!
     $j = $n - $k;
@@ -193,7 +201,6 @@ function combinacao($n, $k=3)
     {
         $fatD1 = $fatD1 * ($i-1);
     }
-    // echo "<br><br><br>fatD1: " . $fatD1 . "<br><br><br>";
 
     //k! / n!(n - k)!
     return intval($fatN / ($fatD0 * $fatD1));

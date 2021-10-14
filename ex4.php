@@ -25,7 +25,7 @@ include("inc/funcoes.php");
 $array = criarArray();
 
 echo "<br>Lados disponíveis: ";
-printArray($array);
+printArrayL($array);
 
 echo "<br>Numero de possibilidades: <b>[";
 echo combinacao(sizeof($array)) . "]</b>";
