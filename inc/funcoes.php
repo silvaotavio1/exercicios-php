@@ -94,3 +94,68 @@ function divisoria(&$array, $esquerda, $direita, $ordem="C")
     $array[$i] = $temp;
     return $i;
 }
+
+
+//Ex3
+function diferencaDatas()
+{
+    $dataini = $_POST['dataini'];
+    $datafim = $_POST['datafim'];
+
+    $diaini = substr($dataini, 0, 2);
+    $mesini = substr($dataini, 3, 2);
+    $anoini = substr($dataini, 6, 4);
+
+    $diafim = substr($datafim, 0, 2);
+    $mesfim = substr($datafim, 3, 2);
+    $anofim = substr($datafim, 6, 4);
+
+    $diasini = diasAno($anoini) + diasMes($anoini, $mesini) + $diaini;
+    $diasfim = diasAno($anofim) + diasMes($anofim, $mesfim) + $diafim;
+
+    return $diasfim - $diasini;
+}
+
+function diasAno($ano)
+{
+    $ano = $ano - 1;
+    return $ano*365 + intval($ano/4);
+}
+
+function diasMes($ano, $mes)
+{
+    $dias = 0;
+    $mes = $mes - 1;
+
+    for($k=0;$k<12;$k++)
+    {
+        $dias_soma = 30;
+        if($k%2==0 && $k<6 && $k <> 2)
+        {
+            $dias_soma = 31; 
+        }
+        if($k%2==1 && $k>=6)
+        {
+            $dias_soma = 31; 
+        }
+        if($k == 2)
+        {
+            if($ano%4 == 0)
+            {
+                $dias_soma = 29;
+            }
+            else
+            {
+                $dias_soma = 28;
+            }
+        }
+
+        if($mes > $k)
+        {
+            $dias = $dias + $dias_soma;
+        }
+    }
+    
+   return $dias;
+
+}

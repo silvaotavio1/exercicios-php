@@ -23,10 +23,6 @@ include("inc/funcoes.php");
 
 <?php
 
-echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArray());
-
-echo "<br>Array após sofrer alteração: ";
-printArray(inverterArray());
+echo "<br>A diferença em dias eh de: " . diferencaDatas() . " dias";
 
 ?>
