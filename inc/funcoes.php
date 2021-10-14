@@ -196,13 +196,13 @@ function triangulos($n = 0, $tot)
     if ($n < 3)
         return '[]';
 
-    for ($j = 1; $j < $tot; $j++) {
+    for ($j = 1; $j <= $tot; $j++) {
         $retorno = array();
         for ($i = 1; $i <= 3; $i++) {
             $retorno[($i * $j - 1)%3] = $i;
         }
 
         printArrayL($retorno);
-        echo (($j+1)==$tot)? "": ", ";
+        echo (($j)==$tot)? "": ", ";
     }
 }
