@@ -92,7 +92,7 @@ function ordenaArray($array)
             }
         }
         
-        if ($bola == 'e') 
+        elseif ($bola == 'e') 
         {
             if ($array[$e] > $pivo) 
             {
