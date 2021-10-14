@@ -14,8 +14,8 @@ include("inc/funcoes.php");
     <p>Número de posições no array: <input value="<?php echo definePosicoes(); ?>" type="number" name="numPosicoes" /></p>
     <p>Numero de inversões: <input value="<?php echo defineInversao() ?>" type="number" name="numInversoes" /></p>
     <p>
-        <input type="submit">Executar</input>
-        <button type="submit" onclick="window.open('/testephp/', '_self')">Voltar</button>
+        <button type="submit">Executar</button>
+        <button onclick="window.open('/testephp/', '_self')">Voltar</button>
     </p>
 </form>
 
