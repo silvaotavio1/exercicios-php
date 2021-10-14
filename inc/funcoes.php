@@ -169,7 +169,7 @@ function arranjoSimples($k, $n=3)
     {
         $fatN = $fatN * $i;
     }
-    $k==0?$fatN=1:null;
+    $k<=0?$fatN=1:null;
 
     $j = $k - $n;
     $fatD=0;
@@ -177,7 +177,7 @@ function arranjoSimples($k, $n=3)
     {
         $fatD = $fatD * $i;
     }
-    $j==0?$fatD=1:null;
+    $j<=0?$fatD=1:null;
 
     return $fatN / $fatD;
 }
