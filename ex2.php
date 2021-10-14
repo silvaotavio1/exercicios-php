@@ -21,7 +21,7 @@ include("inc/funcoes.php");
 <?php
 
 echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArray());
+printArray(criarArrayR());
 
 echo "<br>Array após sofrer alteração: ";
 printArray(inverterArray());
