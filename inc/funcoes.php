@@ -162,7 +162,7 @@ function diasMes($ano, $mes)
 
 
 //Ex4
-function arranjoSimples($n, $k=3)
+function combinacao($n, $k=3)
 {
     //n!
     $n<=0?$n=0:null;

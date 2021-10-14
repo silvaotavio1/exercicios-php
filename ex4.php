@@ -28,6 +28,6 @@ echo "<br>Lados disponíveis: ";
 printArray($array);
 
 echo "<br>Numero de possibilidades: <b>[";
-echo arranjoSimples(sizeof($array)) . "]</b>";
+echo combinacao(sizeof($array)) . "]</b>";
 
 ?>
