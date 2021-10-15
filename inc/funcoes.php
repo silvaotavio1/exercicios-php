@@ -1,6 +1,9 @@
 <?php
 
 //Exemplo 1
+
+use function PHPSTORM_META\elementType;
+
 function defineInversao()
 {
     $retorno = $_POST['numInversoes'] > $_POST['numPosicoes'] ? $_POST['numPosicoes'] : $_POST['numInversoes'];
@@ -201,21 +204,28 @@ function triangulos($n = 0, $tot)
 
     for($k=$minimo;$k<=$maximo;$k++)
     {
-        printArrayL(trianguloPorNumero($k));
+        printArrayL(trianguloPorNumero($k, $n));
         echo ($k==$maximo)?'':', ';
     }
 }
 
-function trianguloPorNumero($n=6)//6 é o menor valor possivel para a soma de lados
+function trianguloPorNumero($somaLados=6, $maiorLado=6)//6 maior lado = Letra F
 {
-    $maior = intval($n/2);
-    $medio = intval($n/3);
-    $menor = $n - $maior - $medio;
+    $maior = intval($somaLados/2);
+    $medio = intval($somaLados/3);
+    $menor = $somaLados - $maior - $medio;
 
     if($medio == $menor)
     {
         $menor--;
-        $maior++;
+        if($maior + 1 > $maiorLado)
+        {
+            $medio++;
+        }
+        else
+        {
+            $maior++;
+        }
     }
 
     return array($menor, $medio, $maior);
