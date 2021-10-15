@@ -215,7 +215,7 @@ function trianguloPorNumero($somaLados=6, $maiorLado=6)//6 maior lado = Letra F
 
     if($maior > $maiorLado)
     {
-        $maior--;
+        $maior = $maiorLado;
     }
 
     $medio = intval($somaLados/3);
@@ -224,7 +224,7 @@ function trianguloPorNumero($somaLados=6, $maiorLado=6)//6 maior lado = Letra F
     if($medio == $menor)
     {
         $menor--;
-        if($maior + 1 > $maiorLado)
+        if($maior == $maiorLado)
         {
             $medio++;
         }
