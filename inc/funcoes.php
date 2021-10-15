@@ -204,7 +204,12 @@ function triangulos($n = 0, $tot)
 
     for($k=$minimo;$k<=$maximo;$k++)
     {
-        printArrayL(trianguloPorNumero($k, $n));
+        $tam = $n;
+        while($tam > 4)
+        {
+            printArrayL(trianguloPorNumero($k, $n));
+            $tam--;
+        }
         echo ($k==$maximo)?'':', ';
     }
 }
