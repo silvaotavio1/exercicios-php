@@ -207,6 +207,12 @@ function triangulos($n = 0, $tot)
 
         echo ($k == $maximo) ? '' : ', ';
     }
+    echo "<br><br>";
+    for ($k = $minimo; $k <= $maximo; $k++) {
+        printArrayL(trianguloPorNumero2($k, $n));
+
+        echo ($k == $maximo) ? '' : ', ';
+    }
 }
 
 function trianguloPorNumero($somaLados = 6, $maiorLado = 6) //6 maior lado = Letra F
@@ -218,6 +224,30 @@ function trianguloPorNumero($somaLados = 6, $maiorLado = 6) //6 maior lado = Let
     }
 
     $medio = intval($somaLados / 3);
+
+    $menor = $somaLados - $maior - $medio;
+
+    if ($medio == $menor) {
+        $menor--;
+        if ($maior == $maiorLado) {
+            $medio++;
+        } else {
+            $maior++;
+        }
+    }
+
+    return array($menor, $medio, $maior);
+}
+
+function trianguloPorNumero2($somaLados = 6, $maiorLado = 6) //6 maior lado = Letra F
+{
+    $maior = intval($somaLados / 2);
+
+    if ($maior > $maiorLado) {
+        $maior = $maiorLado;
+    }
+
+    $medio = intval($somaLados / 2.5);
 
     $menor = $somaLados - $maior - $medio;
 
