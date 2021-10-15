@@ -215,7 +215,7 @@ function triangulos($n = 0, $tot)
     }
 }
 
-function trianguloPorNumero($somaLados=6, $maiorLado=6, $verifica=false)//6 maior lado = Letra F
+function trianguloPorNumero($somaLados=6, $maiorLado=6, $verificaMedio=false)//6 maior lado = Letra F
 {
     $maior = intval($somaLados/2);
 
@@ -226,7 +226,7 @@ function trianguloPorNumero($somaLados=6, $maiorLado=6, $verifica=false)//6 maio
 
     $medio = intval($somaLados/3);
 
-    if($verifica)
+    if($verificaMedio)
     {
         $medio++;
     }
@@ -239,6 +239,19 @@ function trianguloPorNumero($somaLados=6, $maiorLado=6, $verifica=false)//6 maio
         if($maior == $maiorLado)
         {
             $medio++;
+        }
+        else
+        {
+            $maior++;
+        }
+    }
+
+    if($medio == $maior)
+    {
+        $medio--;
+        if($maior == $maiorLado)
+        {
+            $menor++;
         }
         else
         {
