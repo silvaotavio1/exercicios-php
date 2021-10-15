@@ -155,12 +155,14 @@ function diasMes($ano, $mes)
 //Ex4
 function printArrayL($array)
 {
-    $letras = array('', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-    echo "<b>[";
-    for ($k = 0; $k < sizeof($array); $k++) {
-        echo $letras[$array[$k]] . ((($k + 1) == sizeof($array)) ? "" : ",");
+    if (isset($array)) {
+        $letras = array('', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+        echo "<b>[";
+        for ($k = 0; $k < sizeof($array); $k++) {
+            echo $letras[$array[$k]] . ((($k + 1) == sizeof($array)) ? "" : ",");
+        }
+        echo "]</b>";
     }
-    echo "]</b>";
 }
 
 function combinacao($n, $k = 3)
@@ -200,61 +202,45 @@ function triangulos($n = 0, $tot)
         return '[]';
 
     $minimo = 6;
-    $maximo = 3*$n - 3;
+    $maximo = 3 * $n - 3;
 
-    for($k=$minimo;$k<=$maximo;$k++)
-    {
+    for ($k = $minimo; $k <= $maximo; $k++) {
         printArrayL(trianguloPorNumero($k, $n));
 
-        if($k>10)
-        {
-            printArrayL(trianguloPorNumero($k, $n, true));
-        }
-
-        echo ($k==$maximo)?'':', ';
+        echo ($k == $maximo) ? '' : ', ';
     }
 }
 
-function trianguloPorNumero($somaLados=6, $maiorLado=6, $verificaMedio=false)//6 maior lado = Letra F
+function trianguloPorNumero($somaLados = 6, $maiorLado = 6, $verificaMedio = false) //6 maior lado = Letra F
 {
-    $maior = intval($somaLados/2);
+    $maior = intval($somaLados / 2);
 
-    if($maior > $maiorLado)
-    {
+    if ($maior > $maiorLado) {
         $maior = $maiorLado;
     }
 
-    $medio = intval($somaLados/3);
+    $medio = intval($somaLados / 3);
 
-    if($verificaMedio)
-    {
+    if ($verificaMedio) {
         $medio++;
     }
 
     $menor = $somaLados - $maior - $medio;
 
-    if($medio == $menor)
-    {
+    if ($medio == $menor) {
         $menor--;
-        if($maior == $maiorLado)
-        {
+        if ($maior == $maiorLado) {
             $medio++;
-        }
-        else
-        {
+        } else {
             $maior++;
         }
     }
 
-    if($medio == $maior)
-    {
+    if ($medio == $maior) {
         $medio--;
-        if($maior == $maiorLado)
-        {
+        if ($maior == $maiorLado) {
             $menor++;
-        }
-        else
-        {
+        } else {
             $maior++;
         }
     }
