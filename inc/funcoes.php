@@ -202,12 +202,13 @@ function triangulos($n = 0, $tot)
     $minimo = 6;
     $maximo = 3 * $n - 3;
 
+    echo "<br>";
     for ($k = $minimo; $k <= $maximo; $k++) {
         printArrayL(trianguloPorNumero($k, $n));
 
         echo ($k == $maximo) ? '' : ', ';
     }
-    echo "<br><br>";
+    echo "<br>";
     for ($k = $minimo; $k <= $maximo; $k++) {
         printArrayL(trianguloPorNumero2($k, $n));
 
