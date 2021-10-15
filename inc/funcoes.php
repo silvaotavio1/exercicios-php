@@ -210,8 +210,8 @@ function triangulos($n = 0, $tot)
         {
             printArrayL(trianguloPorNumero($k, $n));
             $tam--;
-        }while($tam > 4);
-        
+        }while($tam > 3);
+
         echo ($k==$maximo)?'':', ';
     }
 }
