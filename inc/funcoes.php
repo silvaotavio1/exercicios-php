@@ -2,8 +2,6 @@
 
 //Exemplo 1
 
-use function PHPSTORM_META\elementType;
-
 function defineInversao()
 {
     $retorno = $_POST['numInversoes'] > $_POST['numPosicoes'] ? $_POST['numPosicoes'] : $_POST['numInversoes'];

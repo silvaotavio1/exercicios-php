@@ -21,7 +21,7 @@
                     ?>
                 </ul>
             </li>
-            <li><a href="https://github.com/silvaotavio1/exercicios-php" target="_blank">Reposiorio</a></li>
+            <li><a href="https://github.com/silvaotavio1/exercicios-php" target="_blank">Repositório</a></li>
             <!-- <li><a href="#">Ex 1</a></li> -->
             <!-- 
 	         	<ul>
