@@ -212,6 +212,12 @@ function triangulos($n = 0, $tot)
 function trianguloPorNumero($somaLados=6, $maiorLado=6)//6 maior lado = Letra F
 {
     $maior = intval($somaLados/2);
+
+    if($maior > $maiorLado)
+    {
+        $maior--;
+    }
+
     $medio = intval($somaLados/3);
     $menor = $somaLados - $maior - $medio;
 
