@@ -256,6 +256,11 @@ function trianguloPorNumero2($somaLados = 6, $maiorLado = 6) //6 maior lado = Le
         $medio = 3;
     }
 
+    if ($maior > $maiorLado) {
+        $maior = $maiorLado;
+        $medio--;
+    }
+
     $menor = $somaLados - $maior - $medio;
 
     if ($medio == $menor) {
