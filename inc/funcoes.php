@@ -248,7 +248,7 @@ function trianguloPorNumero2($somaLados = 6, $maiorLado = 6) //6 maior lado = Le
         $maior = $maiorLado;
     }
 
-    $medio = intval($somaLados / 2.5);
+    $medio = intval($somaLados / 2.2);
 
     $menor = $somaLados - $maior - $medio;
 
