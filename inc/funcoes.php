@@ -194,17 +194,21 @@ function numeroCombinacoes($n, $k = 3)
     return intval($fatN / ($fatD0 * $fatD1));
 }
 
-function combinacoes($xs, $k=3){
+function combinacoes($xs, $k = 3)
+{
     if ($k === 0)
+    {
         return array(array());
-    if (count($xs) === 0)
+    }
+    if (count($xs) === 0){
         return array();
+    }
     $x = $xs[0];
-    $xs1 = array_slice($xs,1,count($xs)-1);
-    $res1 = combinacoes($k-1,$xs1);
+    $xs1 = array_slice($xs, 1, count($xs) - 1);
+    $res1 = combinacoes($k - 1, $xs1);
     for ($i = 0; $i < count($res1); $i++) {
         array_splice($res1[$i], 0, 0, $x);
     }
-    $res2 = combinacoes($k,$xs1);
+    $res2 = combinacoes($k, $xs1);
     return array_merge($res1, $res2);
 }
