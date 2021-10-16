@@ -163,7 +163,7 @@ function printArrayL($array)
     }
 }
 
-function combinacao($n, $k = 3)
+function numeroCombinacoes($n, $k = 3)
 {
     //n!
     $n <= 0 ? $n = 0 : null;
@@ -194,19 +194,19 @@ function combinacao($n, $k = 3)
     return intval($fatN / ($fatD0 * $fatD1));
 }
 
-function triangulos($array)
-{
-    if (sizeof($array) < 3)
-        return '[]';
+// function triangulos($array)
+// {
+//     if (sizeof($array) < 3)
+//         return '[]';
 
-    echo "<br>";
-    // printArrayL();
-    trianguloCombinacao('', $array, 0);
+//     echo "<br>";
+//     // printArrayL();
+//     trianguloCombinacao('', $array, 0);
 
-    // echo ($k == $maximo) ? '' : ', ';
-}
+//     // echo ($k == $maximo) ? '' : ', ';
+// }
 
-function trianguloCombinacao($txt, $termos, $i) //6 maior lado = Letra F
+function combinacoes($txt, $termos, $i) //6 maior lado = Letra F
 {
     $texto = '';
     if ($i >= count($termos)) {
