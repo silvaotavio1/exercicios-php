@@ -30,7 +30,8 @@ printArrayL($array);
 echo "<br>Numero de possibilidades: <b>[";
 echo numeroCombinacoes(sizeof($array)) . "]</b><br>";
 
-echo "<br>Exemplo de possibilidades: <b>";
-printArrayL(combinacoes($array));
+echo "<br>Exemplo de possibilidades: <b><pre>";
+// printArrayL(combinacoes($array));
+print_r(combinacoes($array));
 
 ?>
