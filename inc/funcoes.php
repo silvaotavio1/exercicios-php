@@ -212,7 +212,7 @@ function combinacoes($elems, $n=3) {
       $res = combinacoes($n-1, $elems);
       foreach ($res as $ce) {
           foreach ($elems as $e) {
-             array_Push($tmp_set, $ce . $e);
+             array_push($tmp_set, $ce . $e);
           }
        }
        return $tmp_set;
