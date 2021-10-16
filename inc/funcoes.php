@@ -194,32 +194,17 @@ function numeroCombinacoes($n, $k = 3)
     return intval($fatN / ($fatD0 * $fatD1));
 }
 
-// function triangulos($array)
-// {
-//     if (sizeof($array) < 3)
-//         return '[]';
-
-//     echo "<br>";
-//     // printArrayL();
-//     trianguloCombinacao('', $array, 0);
-
-//     // echo ($k == $maximo) ? '' : ', ';
-// }
-
-function combinacoes($elems, $n=3) {
-    if ($n > 0) {
-      $tmp_set = array();
-      $res = combinacoes($n-1, $elems);
-      foreach ($res as $ce) {
-          foreach ($elems as $e) {
-             array_push($tmp_set, $ce . $e);
-          }
-       }
-       return $tmp_set;
+function combinacoes($xs, $k=3){
+    if ($k === 0)
+        return array(array());
+    if (count($xs) === 0)
+        return array();
+    $x = $xs[0];
+    $xs1 = array_slice($xs,1,count($xs)-1);
+    $res1 = combinacoes($k-1,$xs1);
+    for ($i = 0; $i < count($res1); $i++) {
+        array_splice($res1[$i], 0, 0, $x);
     }
-    else {
-        return array('');
-    }
+    $res2 = combinacoes($k,$xs1);
+    return array_merge($res1, $res2);
 }
-// $elems = array('A','B','C');
-// $v = combinacoes(4, $elems);
