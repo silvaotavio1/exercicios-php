@@ -194,72 +194,27 @@ function combinacao($n, $k = 3)
     return intval($fatN / ($fatD0 * $fatD1));
 }
 
-function triangulos($n = 0, $tot)
+function triangulos($array)
 {
-    if ($n < 3)
+    if (sizeof($array) < 3)
         return '[]';
 
-    $minimo = 6;
-    $maximo = 3 * $n - 3;
-
     echo "<br>";
-    for ($k = $minimo; $k <= $maximo; $k++) {
-        printArrayL(trianguloPorNumero($k, $n));
+    // printArrayL();
+    trianguloCombinacao('', $array, 0);
 
-        echo ($k == $maximo) ? '' : ', ';
-    }
-    echo "<br>";
-    for ($k = $minimo; $k <= $maximo; $k++) {
-        printArrayL(trianguloPorNumero2($k, $n));
-
-        echo ($k == $maximo) ? '' : ', ';
-    }
+    // echo ($k == $maximo) ? '' : ', ';
 }
 
-function trianguloPorNumero($somaLados = 6, $maiorLado = 6) //6 maior lado = Letra F
+function trianguloCombinacao($txt, $termos, $i) //6 maior lado = Letra F
 {
-    $maior = intval($somaLados / 2);
-
-    if ($maior > $maiorLado) {
-        $maior = $maiorLado;
-    }
-
-    $medio = intval($somaLados / 3);
-
-    $menor = $somaLados - $maior - $medio;
-
-    if ($medio == $menor) {
-        $menor--;
-        if ($maior == $maiorLado) {
-            $medio++;
-        } else {
-            $maior++;
+    $texto = '';
+    if ($i >= count($termos)) {
+        $texto .= trim($txt) . "<br>";
+    } else {
+        foreach ($termos[$i] as $termo) {
+            $texto .= combinacao($txt . $termo . '##', $termos, $i + 1);
         }
     }
-
-    return array($menor, $medio, $maior);
-}
-
-function trianguloPorNumero2($somaLados = 6, $maiorLado = 6) //6 maior lado = Letra F
-{
-    $maior = intval($somaLados / 2);
-
-    if ($maior > $maiorLado) {
-        $maior = $maiorLado;
-    }
-
-    $menor = 1;
-
-    $medio = $somaLados - $maior - $menor;
-
-    if ($medio == $menor) {
-        $menor--;
-        if ($maior == $maiorLado) {
-            $medio++;
-        } else {
-            $maior++;
-        }
-    }
-
-    return array($menor, $medio, $maior);
+    return $texto;
 }
