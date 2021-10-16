@@ -205,10 +205,10 @@ function combinacoes($xs, $k = 3)
     }
     $x = $xs[0];
     $xs1 = array_slice($xs, 1, count($xs) - 1);
-    $res1 = combinacoes($k - 1, $xs1);
+    $res1 = combinacoes($xs1, $k - 1);
     for ($i = 0; $i < count($res1); $i++) {
         array_splice($res1[$i], 0, 0, $x);
     }
-    $res2 = combinacoes($k, $xs1);
+    $res2 = combinacoes($xs1, $k);
     return array_merge($res1, $res2);
 }
