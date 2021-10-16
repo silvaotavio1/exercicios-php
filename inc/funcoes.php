@@ -213,7 +213,7 @@ function combinacoes($txt, $termos, $i) //6 maior lado = Letra F
         $texto .= trim($txt) . "<br>";
     } else {
         foreach ($termos[$i] as $termo) {
-            $texto .= combinacao($txt . $termo . '##', $termos, $i + 1);
+            $texto .= combinacoes($txt . $termo . '##', $termos, $i + 1);
         }
     }
     return $texto;

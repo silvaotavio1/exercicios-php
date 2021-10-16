@@ -43,7 +43,8 @@ $combinar = array();
 foreach ($opcoes as $k => $v) {
     $combinar[] = $v;
 }
-$texto = combinacao( '', $combinar, 0 );
+$texto = combinacoes( '', $combinar, 0 );
+
 
 echo $texto;
 
