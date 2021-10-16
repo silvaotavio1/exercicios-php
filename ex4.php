@@ -35,7 +35,8 @@ $possibilidades = combinacoes($array);
 echo "<br>Exemplo de possibilidades: <b><pre>";
 foreach($possibilidades as $item)
 {
-    printArrayL(combinacoes($array));
+    printArrayL(combinacoes($item));
+    echo ", ";
 }
 
 // print_r();
