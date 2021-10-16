@@ -33,17 +33,7 @@ echo numeroCombinacoes(sizeof($array)) . "]</b><br>";
 echo "<br>Exemplo de possibilidades: <b>";
 // triangulos($array);
 
-$opcoes = array(
-    array($array),
-    array($array),
-    array($array),
-);
-
-$combinar = array();
-foreach ($opcoes as $k => $v) {
-    $combinar[] = $v;
-}
-$texto = combinacoes( '', $combinar, 0 );
+combinacoes($array);
 
 
 echo $texto;
