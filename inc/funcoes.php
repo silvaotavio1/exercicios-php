@@ -206,15 +206,20 @@ function numeroCombinacoes($n, $k = 3)
 //     // echo ($k == $maximo) ? '' : ', ';
 // }
 
-function combinacoes($txt, $termos, $i) //6 maior lado = Letra F
-{
-    $texto = '';
-    if ($i >= count($termos)) {
-        $texto .= trim($txt) . "<br>";
-    } else {
-        foreach ($termos[$i] as $termo) {
-            $texto .= combinacoes($txt . $termo . '##', $termos, $i + 1);
-        }
+function combinacoes($elems, $n=3) {
+    if ($n > 0) {
+      $tmp_set = array();
+      $res = combinacoes($n-1, $elems);
+      foreach ($res as $ce) {
+          foreach ($elems as $e) {
+             array_Push($tmp_set, $ce . $e);
+          }
+       }
+       return $tmp_set;
     }
-    return $texto;
+    else {
+        return array('');
+    }
 }
+// $elems = array('A','B','C');
+// $v = combinacoes(4, $elems);
