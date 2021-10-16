@@ -27,11 +27,17 @@ $array = criarArray();
 echo "<br>Lados disponíveis: ";
 printArrayL($array);
 
+$numCombinacoes = numeroCombinacoes(sizeof($array));
 echo "<br>Numero de possibilidades: <b>[";
-echo numeroCombinacoes(sizeof($array)) . "]</b><br>";
+echo $numCombinacoes . "]</b><br>";
 
+$possibilidades = combinacoes($array);
 echo "<br>Exemplo de possibilidades: <b><pre>";
-// printArrayL(combinacoes($array));
-print_r(combinacoes($array));
+foreach($possibilidades as $item)
+{
+    printArrayL(combinacoes($array));
+}
+
+// print_r();
 
 ?>
