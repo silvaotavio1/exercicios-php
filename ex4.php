@@ -32,11 +32,13 @@ echo "<br>Numero de possibilidades: <b>[";
 echo $numCombinacoes . "]</b><br>";
 
 $possibilidades = combinacoes($array);
+$tam = sizeof($possibilidades);
 echo "<br>Exemplo de possibilidades: <b><pre>";
-foreach($possibilidades as $item)
+
+for($k=0;$k<$tam;$k++)
 {
-    printArrayL($item);
-    echo ", ";
+    printArrayL($possibilidades[$k]);
+    echo (($k+1) == $tam)? "": ", ";
 }
 
 // print_r();
