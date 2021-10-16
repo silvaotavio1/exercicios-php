@@ -34,8 +34,6 @@ echo "<br>Exemplo de possibilidades: <b>";
 // triangulos($array);
 
 combinacoes($array);
-
-
 echo $texto;
 
 ?>
