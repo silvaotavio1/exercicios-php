@@ -279,33 +279,48 @@ function sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2)
     }
 
     echo "<pre>";
-    print_r($coord_x1);echo "<br>";
-    print_r($coord_y1);echo "<br>";
-    print_r($coord_x2);echo "<br>";
-    print_r($coord_y2);echo "<br>";
+    print_r($coord_x1);
+    echo "<br>";
+    print_r($coord_y1);
+    echo "<br>";
+    print_r($coord_x2);
+    echo "<br>";
+    print_r($coord_y2);
+    echo "<br>";
 
-    $minX1 = quicksort($coord_x1, 0, sizeof($coord_x1) - 1);
-    $minY1 = quicksort($coord_y1, 0, sizeof($coord_y1) - 1);
-    $minX2 = quicksort($coord_x2, 0, sizeof($coord_x2) - 1);
-    $minY2 = quicksort($coord_y2, 0, sizeof($coord_y2) - 1);
+    quicksort($coord_x1, 0, sizeof($coord_x1) - 1);
+    quicksort($coord_y1, 0, sizeof($coord_y1) - 1);
+    quicksort($coord_x2, 0, sizeof($coord_x2) - 1);
+    quicksort($coord_y2, 0, sizeof($coord_y2) - 1);
 
     echo "<br><br><br>";
-    print_r($minX1);echo "<br>";
-    print_r($minY1);echo "<br>";
-    print_r($minX2);echo "<br>";
-    print_r($minY2);echo "<br>";
-    
-    $maxX1 = $minX1[sizeof($coord_x1) - 1];
-    $maxY1 = $minY1[sizeof($coord_y1) - 1];
-    // $maxX2 = $minX2[sizeof($coord_x2) - 1];
-    // $maxY2 = $minY2[sizeof($coord_y2) - 1];
-    
-    $minX1 = $minX1[0];
-    $minY1 = $minY1[0];
-    $minX2 = $minX2[0];
-    $minY2 = $minY1[0];
+    print_r($coord_x1);
+    echo "<br>";
+    print_r($coord_y1);
+    echo "<br>";
+    print_r($coord_x2);
+    echo "<br>";
+    print_r($coord_y2);
+    echo "<br>";
 
-    return ($maxX1 - $minX2) * ($maxY1 - $minY2);
+    $maxX1 = $coord_x1[sizeof($coord_x1) - 1];
+    $maxY1 = $coord_y1[sizeof($coord_y1) - 1];
+    $maxX2 = $coord_x2[sizeof($coord_x2) - 1];
+    $maxY2 = $coord_y2[sizeof($coord_y2) - 1];
+
+    $minX1 = $coord_x1[0];
+    $minY1 = $coord_y1[0];
+    $minX2 = $coord_x2[0];
+    $minY2 = $coord_y2[0];
+
+    $lado1 = ($maxX1 - $minX2) > 0 ? ($maxX1 - $minX2) : ($maxX2 - $minX1);
+    $lado2 = ($maxY1 - $minY2) > 0 ? ($maxY1 - $minY2) : ($maxY2 - $minY1);
+
+    $area = $lado1 * $lado2;
+
+    $area = ($area < 0)? 0: $area;
+
+    return $area;
 
     // echo "<pre>";
     // echo "<br><b>Retângulo 1: </b>";
