@@ -219,6 +219,8 @@ function combinacoes($array, $k = 3)
         array_splice($res1[$i], 0, 0, $x);
         echo '<br> $res1[$i]: '; print_r($res1[$i]);
     }
+    
+    echo '<br> $array1[$i]: '; print_r($array1[$i]);
     $res2 = combinacoes($array1, $k);
     echo '<br> $res2[$i]: '; print_r($res2[$i]);
 
