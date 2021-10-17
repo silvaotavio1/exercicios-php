@@ -163,12 +163,13 @@ function printArrayL($array)
     }
 }
 
-function fatorial($k){
-	if($k <= 1){
-		return 1;
-	}else{
-		return $k * fatorial($k - 1);
-	}
+function fatorial($k)
+{
+    if ($k <= 1) {
+        return 1;
+    } else {
+        return $k * fatorial($k - 1);
+    }
 }
 
 function numeroCombinacoes($n, $k = 3)
@@ -194,35 +195,17 @@ function combinacoes($array, $k = 3)
         return array();
     }
 
-    echo "<br><br>";
-
     $x = $array[0];
-    echo '<br> $x: ';
-    print_r($x);
 
     $array1 = cortarArray($array, 1, (sizeof($array) - 1));
 
-    echo '<br> Antes da recursividade $array: ';
-    print_r($array);
     $res1 = combinacoes($array1, $k - 1); //Fica aqui até $k == 0
 
     for ($i = 0; $i < sizeof($res1); $i++) {
-        echo '<br> $res1[' . $i . ']: ';
-        print_r($res1[$i]);
         $res1[$i] = juntarArrays(array($x), $res1[$i]);
-        echo '<br> $res1[' . $i . ']: ';
-        print_r($res1[$i]);
     }
 
-    echo '<br> $array1: ';
-    print_r($array1);
     $res2 = combinacoes($array1, $k);
-
-    echo '<b><br><br><br>Final da function <br>$res1: ';
-    print_r($res1);
-    echo '<br> $res2: ';
-    print_r($res2);
-    echo "</b>";
 
     return juntarArrays($res1, $res2);
 }
@@ -251,8 +234,6 @@ function juntarArrays($x, $y)
 
     return $arrayRetorno;
 }
-
-
 
 
 //Ex5
@@ -288,26 +269,38 @@ function verificaSubTexto($texto, $subTexto)
 
 
 //Ex6
-function sobreposicaoRetangulos($coord1_x1, $coord1_y1, $coord2_x2, $coord2_y2)
+function sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2)
 {
-    if(empty($coordenadas1))
-    {
-        $coord_x1 = array(array(0), array(2, 2), array(2, 0), array(0, 2));
-        $coord_y1 = array(array(0), array(2, 2), array(2, 0), array(0, 2));
+    if (empty($coord_x1)) {
+        $coord_x1 = array(0, 2, 2, 0);
+        $coord_y1 = array(0, 2, 0, 2);
     }
-    if(empty($coordenadas2))
-    {
-        $coord_x2 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
-        $coord_y2 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
+    if (empty($coord_x2)) {
+        $coord_x2 = array(1, 1, 6, 6);
+        $coord_y2 = array(0, 2, 0, 2);
     }
 
-    $coordenadas1 = quicksort($coordenadas1, 0, sizeof($coordenadas1) - 1);
-    $coordenadas2 = quicksort($coordenadas1, 0, sizeof($coordenadas1) - 1);
+    $minX1 = quicksort($coord_x1, 0, sizeof($coord_x1) - 1);
+    $minY1 = quicksort($coord_y1, 0, sizeof($coord_y1) - 1);
+    $minX2 = quicksort($coord_x2, 0, sizeof($coord_x2) - 1);
+    $minY2 = quicksort($coord_y2, 0, sizeof($coord_y2) - 1);
+    
+    $maxX1 = $minX1[sizeof($coord_x1) - 1];
+    $maxY1 = $minY1[sizeof($coord_y1) - 1];
+    // $maxX2 = $minX2[sizeof($coord_x2) - 1];
+    // $maxY2 = $minY2[sizeof($coord_y2) - 1];
+    
+    $minX1 = $minX1[0];
+    $minY1 = $minY1[0];
+    $minX2 = $minX2[0];
+    $minY2 = $minY1[0];
 
-    echo "<pre>";
-    echo "<br><b>Retângulo 1: </b>";
-    print_r($coordenadas1);
+    return ($maxX1 - $minX2) * ($maxY1 - $minY2);
 
-    echo "<br><b>Retângulo 2: </b>";
-    print_r($coordenadas2);
+    // echo "<pre>";
+    // echo "<br><b>Retângulo 1: </b>";
+    // print_r($coordenadas1);
+    // echo "<br><b>Retângulo 2: </b>";
+    // print_r($coordenadas2);
+
 }
