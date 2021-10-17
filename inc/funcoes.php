@@ -284,5 +284,5 @@ function verificaSubTexto($texto, $subTexto)
 
         $cont--;
     }
-    echo "fimstr: " . substr($texto, $tamTexto) . '<br><br><br>';
+    echo "fimstr: " . substr($texto, $tamTexto - $tamSubTexto) . '<br><br><br>';
 }
