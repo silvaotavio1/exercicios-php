@@ -241,12 +241,11 @@ function cortarArray($array, $de, $ate) //Similar ao array_slice
 
 function juntarArrays($x, $y)
 {
-    $arrayRetorno = array();
-    
+    $arrayRetorno = array();    
     $arrayRetorno = $x;
     $i = sizeof($x);
     
-    for ($k = 0; $k <= sizeof($y); $k++) {
+    for ($k = 0; $k < sizeof($y); $k++) {
         $arrayRetorno[$i] = $y[$k];
         $i++;
     }
