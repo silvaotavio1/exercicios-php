@@ -259,6 +259,7 @@ function juntarArrays($x, $y)
 //Ex5
 function verificaSubTexto($texto, $subtexto)
 {
+    $cont = 0;
     for($k=0;$k<strlen($texto);$k++)
     {
         $aux = false;
@@ -266,8 +267,15 @@ function verificaSubTexto($texto, $subtexto)
         {
             echo "<b>";
             $aux = true;
+            $cont = strlen($subtexto);
+        }
+        else
+        {
+            $cont = 0;
         }
         echo (($k + 1) < strlen($texto))? substr($texto, $k, $k + 1): "";
         echo $aux? "</b>": "";  
+
+        $cont--;
     }
 }
