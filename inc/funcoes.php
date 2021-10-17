@@ -222,7 +222,7 @@ function combinacoes($array, $k = 3)
     echo '<br> $array1: '; print_r($array1);
     $res2 = combinacoes($array1, $k);
 
-    echo '<b><br><br><br>Final da function $res1: '; print_r($res1);
+    echo '<b><br><br><br>Final da function <br>$res1: '; print_r($res1);
     echo '<br> $res2: '; print_r($res2);echo "</b>";
 
     return array_merge($res1, $res2);
