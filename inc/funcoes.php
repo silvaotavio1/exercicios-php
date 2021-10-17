@@ -262,6 +262,9 @@ function verificaSubTexto($texto, $subtexto)
     $cont = 0;
     for($k=0;$k<strlen($texto);$k++)
     {
+        echo substr($texto, $k, strlen($subtexto) - $k) . '<br>';
+        echo substr($texto, $k, $k + 1) . '<br><br><br>';
+        
         $aux = false;
         if(substr($texto, $k, strlen($subtexto) - $k) == $subtexto)
         {
