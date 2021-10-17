@@ -216,7 +216,7 @@ function combinacoes($array, $k = 3)
     for ($i = 0; $i < count($res1); $i++) {
         echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
         // array_splice($res1[$i], 0, 0, $x);
-        $res1 = juntarArrays(array($x), $res1[$i])
+        $res1 = juntarArrays(array($x), $res1[$i]);
         echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
     }
 
