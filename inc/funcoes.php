@@ -274,11 +274,15 @@ function sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2)
     if (sizeof($coord_x1) == 0) {
         $coord_x1 = array(0, 2, 2, 0);
         $coord_y1 = array(0, 2, 0, 2);
-    }
-    if (sizeof($coord_x2) == 0) {
         $coord_x2 = array(1, 1, 6, 6);
         $coord_y2 = array(0, 2, 0, 2);
     }
+
+    echo "<pre>";
+    print_r($coord_x1);echo "<br>";
+    print_r($coord_y1);echo "<br>";
+    print_r($coord_x2);echo "<br>";
+    print_r($coord_y2);echo "<br>";
 
     $minX1 = quicksort($coord_x1, 0, sizeof($coord_x1) - 1);
     $minY1 = quicksort($coord_y1, 0, sizeof($coord_y1) - 1);

@@ -42,12 +42,6 @@ for ($j = 1; $j <= 4; $j++) {
     $coord_y2[$j] = $_POST['y2' . $j];
 }
 
-echo "<pre>";
-print_r($coord_x1);echo "<br>";
-print_r($coord_y1);echo "<br>";
-print_r($coord_x2);echo "<br>";
-print_r($coord_y2);echo "<br>";
-
 echo "<br>Área da sobreposição: ";
 echo sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2);
 echo " m²";
