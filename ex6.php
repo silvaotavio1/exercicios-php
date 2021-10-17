@@ -40,6 +40,15 @@ for ($i = 0; $i < 2; $i++) {
     }
 }
 
+if(!isset($_POST['x11']))
+{
+    $coordenadas[0] = null;
+}
+if(!isset($_POST['x21']))
+{
+    $coordenadas[1] = null;
+}
+
 echo "<br>Área da sobreposição: ";
 sobreposicaoRetangulos($coordenadas[0], $coordenadas[1]);
 
