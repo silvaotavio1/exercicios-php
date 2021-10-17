@@ -163,32 +163,23 @@ function printArrayL($array)
     }
 }
 
+function fatorial($k){
+	if($k <= 1){
+		return 1;
+	}else{
+		return $k * fatorial($k - 1);
+	}
+}
+
 function numeroCombinacoes($n, $k = 3)
 {
     //n!
     $n <= 0 ? $n = 0 : null;
-
-    $fatN = $n;
-    for ($i = $n; $i > 1; $i--) {
-        $fatN = $fatN * ($i - 1);
-    }
-
+    $fatN = fatorial($n);
     //k!
-    $k < 3 ? $k = 0 : null;
-
-    $fatD0 = $k;
-    for ($i = $k; $i > 1; $i--) {
-        $fatD0 = $fatD0 * ($i - 1);
-    }
-
+    $fatD0 = fatorial($k);
     //(n - k)!
-    $j = $n - $k;
-    $j <= 0 ? $j = 1 : null;
-
-    $fatD1 = $j;
-    for ($i = $j; $i > 1; $i--) {
-        $fatD1 = $fatD1 * ($i - 1);
-    }
+    $fatD1 = fatorial($n - $k);
 
     //k! / n!(n - k)!
     return intval($fatN / ($fatD0 * $fatD1));
@@ -297,16 +288,21 @@ function verificaSubTexto($texto, $subTexto)
 
 
 //Ex6
-function sobreposicaoRetangulos($coordenadas1, $coordenadas2)
+function sobreposicaoRetangulos($coord1_x1, $coord1_y1, $coord2_x2, $coord2_y2)
 {
     if(empty($coordenadas1))
     {
-        $coordenadas1 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
+        $coord_x1 = array(array(0), array(2, 2), array(2, 0), array(0, 2));
+        $coord_y1 = array(array(0), array(2, 2), array(2, 0), array(0, 2));
     }
     if(empty($coordenadas2))
     {
-        $coordenadas2 = array(array(1, 0), array(1, 2), array(6, 0), array(6, 2));
+        $coord_x2 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
+        $coord_y2 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
     }
+
+    $coordenadas1 = quicksort($coordenadas1, 0, sizeof($coordenadas1) - 1);
+    $coordenadas2 = quicksort($coordenadas1, 0, sizeof($coordenadas1) - 1);
 
     echo "<pre>";
     echo "<br><b>Retângulo 1: </b>";
