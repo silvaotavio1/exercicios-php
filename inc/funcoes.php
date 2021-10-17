@@ -290,7 +290,7 @@ function verificaSubTexto($texto, $subTexto)
     }
 
     // echo '<br> cont= ' . $cont . '<br>';
-    echo substr($texto, $cont);
+    echo substr(substr($texto, $k), $cont);
 
     // echo "fimstr: " . substr($texto, $k) . '<br><br><br>';
 }
