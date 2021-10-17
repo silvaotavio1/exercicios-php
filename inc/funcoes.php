@@ -266,13 +266,13 @@ function verificaSubTexto($texto, $subTexto)
     $k='';
     for($k=0;$k<$tamTexto - $tamSubTexto;$k++)
     {
-        echo substr($texto, $k, $tamSubTexto - $k) . '<br>';
-        echo substr($texto, $k, $k - 1) . '<br><br><br>';
-        
+        echo "Elemento de comparaçao: " . substr($texto, $k, $tamSubTexto - $k) . '<br>';
+        echo "Elemento de impressao: " . substr($texto, $k, $k - 1) . '<br>';
+
         $aux = false;
         if(substr($texto, $k, $tamSubTexto - $k) == $subTexto)
         {
-            echo "<b>";
+            // echo "<b>";
             $aux = true;
             $cont = $tamSubTexto;
         }
@@ -280,8 +280,10 @@ function verificaSubTexto($texto, $subTexto)
         {
             $cont = 0;
         }
-        echo (($k + 1) < $tamTexto)? substr($texto, $k, $k + 1): "";
-        echo $aux? "</b>": "";  
+        echo "Contador tag b: " . $cont . '<br><br><br>';
+
+        // echo (($k + 1) < $tamTexto)? substr($texto, $k, $k + 1): "";
+        // echo $aux? "</b>": "";  
 
         $cont--;
     }
