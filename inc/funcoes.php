@@ -223,12 +223,12 @@ function cortarArray($array, $de, $ate) //Similar ao array_slice
 {
     $arrayRetorno = array();
     $i = 0;
-    for ($k = $de; $k < $ate; $k++) {
+    for ($k = $de; $k <= $ate; $k++) {
         $arrayRetorno[$i] = $array[$k];
         $i++;
     }
 
-    print_r($arrayRetorno);exit;
+    // print_r($arrayRetorno);exit;
 
     return $arrayRetorno;
 }
