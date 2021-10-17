@@ -287,9 +287,9 @@ function verificaSubTexto($texto, $subTexto)
             $aux = false;
         }
 
-        if ($aux && $cont == $tamSubTexto) {
+        if ($cont > 0) {
             echo "<b>" . substr($texto, $k, $tamSubTexto) . "</b>";
-        } elseif(!$aux) {
+        } else {
             echo substr($texto, $k, 1);
         }
         // echo "Contador tag b: " . $cont . '<br><br><br>';
