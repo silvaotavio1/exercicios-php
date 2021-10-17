@@ -36,10 +36,10 @@ $coord_x2 = array();
 $coord_y2 = array();
 
 for ($j = 1; $j <= 4; $j++) {
-    $coord_x1[$j] = $_POST['x1' . $j];
-    $coord_y1[$j] = $_POST['y1' . $j];
-    $coord_x2[$j] = $_POST['x2' . $j];
-    $coord_y2[$j] = $_POST['y2' . $j];
+    $coord_x1[$j-1] = $_POST['x1' . $j];
+    $coord_y1[$j-1] = $_POST['y1' . $j];
+    $coord_x2[$j-1] = $_POST['x2' . $j];
+    $coord_y2[$j-1] = $_POST['y2' . $j];
 }
 
 if ($_POST['x11'] == '') {
