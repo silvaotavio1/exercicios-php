@@ -225,7 +225,7 @@ function combinacoes($array, $k = 3)
     echo '<b><br><br><br>Final da function <br>$res1: '; print_r($res1);
     echo '<br> $res2: '; print_r($res2);echo "</b>";
 
-    return array_merge($res1, $res2);
+    return juntarArrays($res1, $res2);
 }
 
 function cortarArray($array, $de, $ate) //Similar ao array_slice
@@ -236,5 +236,20 @@ function cortarArray($array, $de, $ate) //Similar ao array_slice
         $arrayRetorno[$i] = $array[$k];
         $i++;
     }
+    return $arrayRetorno;
+}
+
+function juntarArrays($x, $y)
+{
+    $arrayRetorno = array();
+    
+    $arrayRetorno = $x;
+    $i = sizeof($x);
+    
+    for ($k = 0; $k <= sizeof($y); $k++) {
+        $arrayRetorno[$i] = $y[$k];
+        $i++;
+    }
+
     return $arrayRetorno;
 }
