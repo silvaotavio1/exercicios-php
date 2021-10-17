@@ -11,8 +11,15 @@ include("inc/funcoes.php");
 </head>
 
 <form action="ex6.php" method="post">
-    <p>Número de posições no array: <input value="<?php echo definePosicoes(); ?>" type="number" name="numPosicoes" /></p>
-    <p>Numero de inversões: <input value="<?php echo defineInversao() ?>" type="number" name="numInversoes" /></p>
+    <p>x[1][1]: <input value="<?php echo definePosicoes(); ?>" type="number" name="x11" /></p>
+    <?php
+    for ($i = 1; $i <= 2; $i++) {
+        for ($j = 1; $j <= 4; $j++) {
+            echo '<p>x[' . $i . '][' . $j . ']: <input value="' . $_POST['x' . $i . $j] . '" type="number" name="x' . $i . $j . '" /></p>';
+            echo '<p>y[' . $i . '][' . $j . ']: <input value="' . $_POST['y' . $i . $j] . '" type="number" name="y' . $i . $j . '" /></p>';
+        }
+    }
+    ?>
     <p>
         <button type="submit">Executar</button>
         <button type="button" onclick="window.open('/testephp/', '_self')">Voltar</button>
@@ -23,10 +30,7 @@ include("inc/funcoes.php");
 
 <?php
 
-echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArray());
-
-echo "<br>Array após sofrer alteração: ";
+echo "<br>Área da sobreposição: ";
 printArray(inverterArray());
 
 ?>

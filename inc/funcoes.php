@@ -294,3 +294,17 @@ function verificaSubTexto($texto, $subTexto)
 
     // echo "fimstr: " . substr($texto, $k) . '<br><br><br>';
 }
+
+
+//Ex6
+function sobreposicaoRetangulos($coordenadas1, $coordenadas2)
+{
+    if(!isset($coordenadas1))
+    {
+        $coordenadas1 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
+    }
+    if(!isset($coordenadas2))
+    {
+        $coordenadas2 = array(array(1, 0), array(1, 2), array(6, 0), array(6, 2));
+    }
+}

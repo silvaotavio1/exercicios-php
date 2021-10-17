@@ -14,7 +14,8 @@
 
 
             <li><a href="#">Exemplos</a>
-                <ul><?php
+                <ul>
+                    <?php
                     for ($k = 1; $k <= 7; $k++) {
                         echo '<li><a href="ex' . $k . '.php">Ex ' . $k . '</a></li>';
                     }
