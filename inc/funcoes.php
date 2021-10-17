@@ -277,10 +277,11 @@ function verificaSubTexto($texto, $subTexto)
         // echo "Elemento de impressao: " . substr($texto, $k, 1) . '<br>';
 
         $aux = false;
-        if (substr($texto, $k, $tamSubTexto) == $subTexto) {
+        $comparacao = substr($texto, $k, $tamSubTexto);
+        if ($comparacao == $subTexto) {
             $aux = true;
-            $cont = $tamSubTexto;
-            echo "<b>" . substr($texto, $k, $tamSubTexto) . "</b>";
+            $cont = $tamSubTexto - 1;
+            echo "<b>" . $comparacao . "</b>";
         } elseif ($cont > 0) {
             $cont--;
         } else {
