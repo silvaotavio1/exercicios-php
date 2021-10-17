@@ -11,12 +11,11 @@ include("inc/funcoes.php");
 </head>
 
 <form action="ex6.php" method="post">
-    <p>x[1][1]: <input value="<?php echo definePosicoes(); ?>" type="number" name="x11" /></p>
     <?php
     for ($i = 1; $i <= 2; $i++) {
         for ($j = 1; $j <= 4; $j++) {
-            echo '<p>x[' . $i . '][' . $j . ']: <input value="' . $_POST['x' . $i . $j] . '" type="number" name="x' . $i . $j . '" /></p>';
-            echo '<p>y[' . $i . '][' . $j . ']: <input value="' . $_POST['y' . $i . $j] . '" type="number" name="y' . $i . $j . '" /></p>';
+            echo '<p>x[' . $i . '][' . $j . ']: <input value="' . $_POST['x' . $i . $j] . '" type="number" name="x' . $i . $j . '" />';
+            echo 'y[' . $i . '][' . $j . ']: <input value="' . $_POST['y' . $i . $j] . '" type="number" name="y' . $i . $j . '" /></p>';
         }
     }
     ?>
