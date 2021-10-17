@@ -206,9 +206,11 @@ function combinacoes($array, $k = 3)
     $x = $array[0];
     $array1 = cortarArray($array, 1, (sizeof($array) - 1));
 
+    echo '<br> Antes da recursividade $array: '; print_r($array);
     $res1 = combinacoes($array1, $k - 1);//Fica aqui até $k == 0
 
     for ($i = 0; $i < count($res1); $i++) {
+        echo '<br> $res1[$i]: '; print_r($res1[$i]);
         array_splice($res1[$i], 0, 0, $x);
 
         echo '<br> $array: '; print_r($array);
