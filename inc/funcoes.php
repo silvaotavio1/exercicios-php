@@ -196,22 +196,36 @@ function numeroCombinacoes($n, $k = 3)
 
 function combinacoes($array, $k = 3)
 {
-    if ($k === 0)
-    {
+    if ($k === 0) {
         return array(array());
     }
-    if (count($array) === 0){
+    if (count($array) === 0) {
         return array();
     }
+
     $x = $array[0];
-    $array1 = array_slice($array, 1, count($array) - 1);
+    $array1 = cortarArray($array, 1, (sizeof($array) - 1));
+
     $res1 = combinacoes($array1, $k - 1);
-    
-    for ($i = 0; $i < count($res1); $i++) 
-    {
+
+    for ($i = 0; $i < count($res1); $i++) {
         array_splice($res1[$i], 0, 0, $x);
+
+        echo '<br> $res1[$i]: '; print_r($res1[$i]);
+        echo '<br> $x: '; print_r($x);
     }
     $res2 = combinacoes($array1, $k);
 
     return array_merge($res1, $res2);
+}
+
+function cortarArray($array, $de, $ate) //Similar ao array_slice
+{
+    $arrayRetorno = array();
+    $i = 0;
+    for ($k = $de; $k < $ate; $k++) {
+        $arrayRetorno[$i] = $array[$k];
+        $i++;
+    }
+    return $arrayRetorno;
 }
