@@ -299,19 +299,19 @@ function verificaSubTexto($texto, $subTexto)
 //Ex6
 function sobreposicaoRetangulos($coordenadas1, $coordenadas2)
 {
-    if(!isset($coordenadas1))
+    if(empty($coordenadas1))
     {
         $coordenadas1 = array(array(0, 0), array(2, 2), array(2, 0), array(0, 2));
     }
-    if(!isset($coordenadas2))
+    if(empty($coordenadas2))
     {
         $coordenadas2 = array(array(1, 0), array(1, 2), array(6, 0), array(6, 2));
     }
 
     echo "<pre>";
-    echo "Retângulo 1: ";
+    echo "<br><b>Retângulo 1: </b>";
     print_r($coordenadas1);
 
-    echo "Retângulo 2: ";
+    echo "<br><b>Retângulo 2: </b>";
     print_r($coordenadas2);
 }
