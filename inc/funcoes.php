@@ -203,6 +203,8 @@ function combinacoes($array, $k = 3)
         return array();
     }
 
+    echo "<br><br>";
+
     $x = $array[0];
     $array1 = cortarArray($array, 1, (sizeof($array) - 1));
 
