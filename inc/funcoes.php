@@ -203,27 +203,27 @@ function combinacoes($array, $k = 3)
         return array();
     }
 
-    // echo "<br><br>";
+    echo "<br><br>";
 
     $x = $array[0];
-    // echo '<br> $x: '; print_r($x);
+    echo '<br> $x: '; print_r($x);
 
     $array1 = cortarArray($array, 1, (sizeof($array) - 1));
 
-    // echo '<br> Antes da recursividade $array: '; print_r($array);
+    echo '<br> Antes da recursividade $array: '; print_r($array);
     $res1 = combinacoes($array1, $k - 1);//Fica aqui até $k == 0
 
-    for ($i = 0; $i < count($res1); $i++) {
-        // echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
+    for ($i = 0; $i < sizeof($res1); $i++) {
+        echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
         $res1[$i] = juntarArrays(array($x), $res1[$i]);
-        // echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
+        echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
     }
 
-    // echo '<br> $array1: '; print_r($array1);
+    echo '<br> $array1: '; print_r($array1);
     $res2 = combinacoes($array1, $k);
 
-    // echo '<b><br><br><br>Final da function <br>$res1: '; print_r($res1);
-    // echo '<br> $res2: '; print_r($res2);echo "</b>";
+    echo '<b><br><br><br>Final da function <br>$res1: '; print_r($res1);
+    echo '<br> $res2: '; print_r($res2);echo "</b>";
 
     return juntarArrays($res1, $res2);
 }
@@ -251,4 +251,23 @@ function juntarArrays($x, $y)
     }
 
     return $arrayRetorno;
+}
+
+
+
+
+//Ex5
+function verificaSubTexto($texto, $subtexto)
+{
+    for($k=0;$k<strlen($texto);$k++)
+    {
+        $aux = false;
+        if(substr($texto, $k, strlen($subtexto) - $k) ==  $subtexto)
+        {
+            echo "<b>";
+            $aux = true;
+        } 
+        echo substr($texto, $k, strlen($subtexto) - $k);
+        echo $aux? "</b>": "";
+    }
 }

@@ -11,8 +11,8 @@ include("inc/funcoes.php");
 </head>
 
 <form action="ex5.php" method="post">
-    <p>Número de posições no array: <input value="<?php echo definePosicoes(); ?>" type="number" name="numPosicoes" /></p>
-    <p>Numero de inversões: <input value="<?php echo defineInversao() ?>" type="number" name="numInversoes" /></p>
+    <p>Informe um texto qualquer: <input value="<?php echo $_POST['texto']; ?>" type="text" name="texto" /></p>
+    <p>Informe um subtexto para busca: <input value="<?php echo $_POST['subtexto']; ?>" type="text" name="subtexto" /></p>
     <p>
         <button type="submit">Executar</button>
         <button type="button" onclick="window.open('/testephp/', '_self')">Voltar</button>
@@ -23,10 +23,10 @@ include("inc/funcoes.php");
 
 <?php
 
-echo "<br>Array antes de sofrer alteração: ";
-printArray(criarArray());
+// echo "<br><p>Texto base: ";
+// echo $_POST['texto'];
 
-echo "<br>Array após sofrer alteração: ";
-printArray(inverterArray());
+echo "<br>Resultado: ";
+echo verificaSubTexto($_POST['texto'], $_POST['subtexto']);
 
 ?>
