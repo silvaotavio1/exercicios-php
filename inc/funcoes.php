@@ -288,6 +288,12 @@ function sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2)
     $minY1 = quicksort($coord_y1, 0, sizeof($coord_y1) - 1);
     $minX2 = quicksort($coord_x2, 0, sizeof($coord_x2) - 1);
     $minY2 = quicksort($coord_y2, 0, sizeof($coord_y2) - 1);
+
+    echo "<br><br><br>";
+    print_r($minX1);echo "<br>";
+    print_r($minY1);echo "<br>";
+    print_r($minX2);echo "<br>";
+    print_r($minY2);echo "<br>";
     
     $maxX1 = $minX1[sizeof($coord_x1) - 1];
     $maxY1 = $minY1[sizeof($coord_y1) - 1];
