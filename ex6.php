@@ -52,7 +52,7 @@ if(!isset($_POST['x21']))
 }
 
 echo "<br>Área da sobreposição: ";
-sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2);
+echo sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2);
 echo " m²";
 
 ?>
