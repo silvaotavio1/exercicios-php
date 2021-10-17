@@ -278,30 +278,30 @@ function sobreposicaoRetangulos($coord_x1, $coord_y1, $coord_x2, $coord_y2)
         $coord_y2 = array(0, 2, 0, 2);
     }
 
-    echo "<pre>";
-    print_r($coord_x1);
-    echo "<br>";
-    print_r($coord_y1);
-    echo "<br>";
-    print_r($coord_x2);
-    echo "<br>";
-    print_r($coord_y2);
-    echo "<br>";
+    // echo "<pre>";
+    // print_r($coord_x1);
+    // echo "<br>";
+    // print_r($coord_y1);
+    // echo "<br>";
+    // print_r($coord_x2);
+    // echo "<br>";
+    // print_r($coord_y2);
+    // echo "<br>";
 
     quicksort($coord_x1, 0, sizeof($coord_x1) - 1);
     quicksort($coord_y1, 0, sizeof($coord_y1) - 1);
     quicksort($coord_x2, 0, sizeof($coord_x2) - 1);
     quicksort($coord_y2, 0, sizeof($coord_y2) - 1);
 
-    echo "<br><br><br>";
-    print_r($coord_x1);
-    echo "<br>";
-    print_r($coord_y1);
-    echo "<br>";
-    print_r($coord_x2);
-    echo "<br>";
-    print_r($coord_y2);
-    echo "<br>";
+    // echo "<br><br><br>";
+    // print_r($coord_x1);
+    // echo "<br>";
+    // print_r($coord_y1);
+    // echo "<br>";
+    // print_r($coord_x2);
+    // echo "<br>";
+    // print_r($coord_y2);
+    // echo "<br>";
 
     $maxX1 = $coord_x1[sizeof($coord_x1) - 1];
     $maxY1 = $coord_y1[sizeof($coord_y1) - 1];
