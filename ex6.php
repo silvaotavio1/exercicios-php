@@ -42,11 +42,11 @@ for ($i = 0; $i < 2; $i++) {
 
 if(!isset($_POST['x11']))
 {
-    $coordenadas[0] = null;
+    $coordenadas[0] = array();
 }
 if(!isset($_POST['x21']))
 {
-    $coordenadas[1] = null;
+    $coordenadas[1] = array();
 }
 
 echo "<br>Área da sobreposição: ";
