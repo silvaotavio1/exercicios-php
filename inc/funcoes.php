@@ -206,24 +206,32 @@ function combinacoes($array, $k = 3)
     echo "<br><br>";
 
     $x = $array[0];
-    echo '<br> $x: '; print_r($x);
+    echo '<br> $x: ';
+    print_r($x);
 
     $array1 = cortarArray($array, 1, (sizeof($array) - 1));
 
-    echo '<br> Antes da recursividade $array: '; print_r($array);
-    $res1 = combinacoes($array1, $k - 1);//Fica aqui até $k == 0
+    echo '<br> Antes da recursividade $array: ';
+    print_r($array);
+    $res1 = combinacoes($array1, $k - 1); //Fica aqui até $k == 0
 
     for ($i = 0; $i < sizeof($res1); $i++) {
-        echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
+        echo '<br> $res1[' . $i . ']: ';
+        print_r($res1[$i]);
         $res1[$i] = juntarArrays(array($x), $res1[$i]);
-        echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
+        echo '<br> $res1[' . $i . ']: ';
+        print_r($res1[$i]);
     }
 
-    echo '<br> $array1: '; print_r($array1);
+    echo '<br> $array1: ';
+    print_r($array1);
     $res2 = combinacoes($array1, $k);
 
-    echo '<b><br><br><br>Final da function <br>$res1: '; print_r($res1);
-    echo '<br> $res2: '; print_r($res2);echo "</b>";
+    echo '<b><br><br><br>Final da function <br>$res1: ';
+    print_r($res1);
+    echo '<br> $res2: ';
+    print_r($res2);
+    echo "</b>";
 
     return juntarArrays($res1, $res2);
 }
@@ -241,10 +249,10 @@ function cortarArray($array, $de, $ate) //Similar ao array_slice
 
 function juntarArrays($x, $y)
 {
-    $arrayRetorno = array();    
+    $arrayRetorno = array();
     $arrayRetorno = $x;
     $i = sizeof($x);
-    
+
     for ($k = 0; $k < sizeof($y); $k++) {
         $arrayRetorno[$i] = $y[$k];
         $i++;
@@ -262,30 +270,39 @@ function verificaSubTexto($texto, $subTexto)
     $cont = 0;
     $tamTexto = strlen($texto);
     $tamSubTexto = strlen($subTexto);
-    
-    $k='';
-    for($k=0;$k<$tamTexto - $tamSubTexto;$k++)
-    {
-        echo "Elemento de comparaçao: " . substr($texto, $k, $tamSubTexto) . '<br>';
-        echo "Elemento de impressao: " . substr($texto, $k, 1) . '<br>';
+
+    $k = '';
+    for ($k = 0; $k < $tamTexto - $tamSubTexto; $k++) {
+        // echo "Elemento de comparaçao: " . substr($texto, $k, $tamSubTexto) . '<br>';
+        // echo "Elemento de impressao: " . substr($texto, $k, 1) . '<br>';
 
         $aux = false;
-        if(substr($texto, $k, $tamSubTexto) == $subTexto)
-        {
+        if (substr($texto, $k, $tamSubTexto) == $subTexto) {
             // echo "<b>";
             $aux = true;
             $cont = $tamSubTexto;
+        } elseif ($cont > 0) {
+            $cont--;
+        } else {
+            $aux = false;
         }
-        else
-        {
-            $cont = 0;
+
+        if ($aux && $cont == $tamSubTexto) {
+            echo "<b>" . substr($texto, $k, $tamSubTexto) . "</b>";
+        } else {
+            echo substr($texto, $k, 1);
         }
-        echo "Contador tag b: " . $cont . '<br><br><br>';
+        // echo "Contador tag b: " . $cont . '<br><br><br>';
 
         // echo (($k + 1) < $tamTexto)? substr($texto, $k, $k + 1): "";
         // echo $aux? "</b>": "";  
 
         $cont--;
     }
-    echo "fimstr: " . substr($texto, $k) . '<br><br><br>';
+
+    if (!$aux) {
+        echo substr($texto, $k);
+    }
+
+    // echo "fimstr: " . substr($texto, $k) . '<br><br><br>';
 }
