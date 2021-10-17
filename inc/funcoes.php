@@ -286,11 +286,10 @@ function verificaSubTexto($texto, $subTexto)
         } else {
             echo substr($texto, $k, 1);
         }
-
-        $cont--;
     }
 
     if (!$aux) {
+        echo '<br> cont= ' . $cont . '<br>';
         echo substr($texto, $k);
     }
 
