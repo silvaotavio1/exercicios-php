@@ -30,7 +30,17 @@ include("inc/funcoes.php");
 
 <?php
 
+$coordenadas1 = array();
+$coordenadas2 = array();
+$coordenadas = array($coordenadas1, $coordenadas2);
+
+for ($i = 0; $i < 2; $i++) {
+    for ($j = 0; $j < 4; $j++) {
+        $coordenadas[$i][$j] = array($_POST['x' . $i . $j], $_POST['y' . $i . $j]);
+    }
+}
+
 echo "<br>Área da sobreposição: ";
-printArray(inverterArray());
+sobreposicaoRetangulos($coordenadas[0], $coordenadas[1]);
 
 ?>

@@ -307,4 +307,11 @@ function sobreposicaoRetangulos($coordenadas1, $coordenadas2)
     {
         $coordenadas2 = array(array(1, 0), array(1, 2), array(6, 0), array(6, 2));
     }
+
+    echo "<pre>";
+    echo "Retângulo 1: ";
+    print_r($coordenadas1);
+
+    echo "Retângulo 2: ";
+    print_r($coordenadas2);
 }
