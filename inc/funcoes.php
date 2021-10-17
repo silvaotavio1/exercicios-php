@@ -287,12 +287,6 @@ function verificaSubTexto($texto, $subTexto)
             echo substr($texto, $k, 1);
         }
 
-        if ($cont > 0) {
-            echo "<b>" . substr($texto, $k, $tamSubTexto) . "</b>";
-        } else {
-            echo substr($texto, $k, 1);
-        }
-
         $cont--;
     }
 
