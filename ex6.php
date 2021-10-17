@@ -42,11 +42,11 @@ for ($j = 1; $j <= 4; $j++) {
     $coord_y2[$j] = $_POST['y2' . $j];
 }
 
-if(!isset($_POST['x11']))
+if(empty($_POST['x11']))
 {
     $coord_x1 = array();
 }
-if(!isset($_POST['x21']))
+if(empty($_POST['x21']))
 {
     $coord_x2 = array();
 }
