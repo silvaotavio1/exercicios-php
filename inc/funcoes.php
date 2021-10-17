@@ -263,6 +263,7 @@ function verificaSubTexto($texto, $subTexto)
     $tamTexto = strlen($texto);
     $tamSubTexto = strlen($subTexto);
     
+    $k='';
     for($k=0;$k<$tamTexto - $tamSubTexto;$k++)
     {
         echo substr($texto, $k, $tamSubTexto - $k) . '<br>';
@@ -284,5 +285,5 @@ function verificaSubTexto($texto, $subTexto)
 
         $cont--;
     }
-    echo "fimstr: " . substr($texto, $tamTexto - $tamSubTexto) . '<br><br><br>';
+    echo "fimstr: " . substr($texto, $k+1) . '<br><br><br>';
 }
