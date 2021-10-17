@@ -266,7 +266,7 @@ function verificaSubTexto($texto, $subTexto)
     $k='';
     for($k=0;$k<$tamTexto - $tamSubTexto;$k++)
     {
-        echo "Elemento de comparaçao: " . substr($texto, $k, $tamSubTexto - $k) . '<br>';
+        echo "Elemento de comparaçao: " . substr($texto, $k, $tamSubTexto + $k) . '<br>';
         echo "Elemento de impressao: " . substr($texto, $k, $k - 1) . '<br>';
 
         $aux = false;
