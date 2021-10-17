@@ -42,15 +42,6 @@ for ($j = 1; $j <= 4; $j++) {
     $coord_y2[$j] = $_POST['y2' . $j];
 }
 
-if(empty($_POST['x11']))
-{
-    $coord_x1 = array();
-}
-if(empty($_POST['x21']))
-{
-    $coord_x2 = array();
-}
-
 echo "<pre>";
 print_r($coord_x1);echo "<br>";
 print_r($coord_y1);echo "<br>";
