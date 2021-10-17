@@ -266,11 +266,11 @@ function verificaSubTexto($texto, $subTexto)
     $k='';
     for($k=0;$k<$tamTexto - $tamSubTexto;$k++)
     {
-        echo "Elemento de comparaçao: " . substr($texto, $k+1, $tamSubTexto + $k) . '<br>';
-        echo "Elemento de impressao: " . substr($texto, $k, $k - 1) . '<br>';
+        echo "Elemento de comparaçao: " . substr($texto, $k, $tamSubTexto) . '<br>';
+        echo "Elemento de impressao: " . substr($texto, $k, 1) . '<br>';
 
         $aux = false;
-        if(substr($texto, $k+1, $tamSubTexto + $k) == $subTexto)
+        if(substr($texto, $k, $tamSubTexto) == $subTexto)
         {
             // echo "<b>";
             $aux = true;
