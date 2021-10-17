@@ -278,13 +278,13 @@ function verificaSubTexto($texto, $subTexto)
 
         $aux = false;
         if (substr($texto, $k, $tamSubTexto) == $subTexto) {
-            // echo "<b>";
             $aux = true;
             $cont = $tamSubTexto;
+            echo "<b>" . substr($texto, $k, $tamSubTexto) . "</b>";
         } elseif ($cont > 0) {
             $cont--;
         } else {
-            $aux = false;
+            echo substr($texto, $k, 1);
         }
 
         if ($cont > 0) {
@@ -292,10 +292,6 @@ function verificaSubTexto($texto, $subTexto)
         } else {
             echo substr($texto, $k, 1);
         }
-        // echo "Contador tag b: " . $cont . '<br><br><br>';
-
-        // echo (($k + 1) < $tamTexto)? substr($texto, $k, $k + 1): "";
-        // echo $aux? "</b>": "";  
 
         $cont--;
     }
