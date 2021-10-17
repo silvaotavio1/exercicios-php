@@ -266,7 +266,7 @@ function verificaSubTexto($texto, $subTexto)
     for($k=0;$k<$tamTexto - $tamSubTexto;$k++)
     {
         echo substr($texto, $k, $tamSubTexto - $k) . '<br>';
-        echo substr($texto, $k, $k + $tamSubTexto - 1) . '<br><br><br>';
+        echo substr($texto, $k, $k - 1) . '<br><br><br>';
         
         $aux = false;
         if(substr($texto, $k, $tamSubTexto - $k) == $subTexto)
@@ -284,4 +284,5 @@ function verificaSubTexto($texto, $subTexto)
 
         $cont--;
     }
+    echo "fimstr: " . substr($texto, $tamTexto) . '<br><br><br>';
 }
