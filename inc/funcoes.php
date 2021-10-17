@@ -288,10 +288,8 @@ function verificaSubTexto($texto, $subTexto)
         }
     }
 
-    if (!$aux) {
-        echo '<br> cont= ' . $cont . '<br>';
-        echo substr($texto, $k);
-    }
+    echo '<br> cont= ' . $cont . '<br>';
+    echo substr($texto, $k);
 
     // echo "fimstr: " . substr($texto, $k) . '<br><br><br>';
 }
