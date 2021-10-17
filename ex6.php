@@ -52,7 +52,7 @@ echo "<br>";
 print_r($coord_y2);
 echo "<br>";
 
-if (empty($_POST['x11'])) {
+if ($_POST['x11'] <> '') {
     $coord_x1 = array();
 }
 
