@@ -214,15 +214,14 @@ function combinacoes($array, $k = 3)
     $res1 = combinacoes($array1, $k - 1);//Fica aqui até $k == 0
 
     for ($i = 0; $i < count($res1); $i++) {
-        
-        echo '<br> $res1[$i]: '; print_r($res1[$i]);
+        echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
         array_splice($res1[$i], 0, 0, $x);
-        echo '<br> $res1[$i]: '; print_r($res1[$i]);
+        echo '<br> $res1[' . $i . ']: '; print_r($res1[$i]);
     }
-    
-    echo '<br> $array1[$i]: '; print_r($array1[$i]);
+
+    echo '<br> $array1: '; print_r($array1);
     $res2 = combinacoes($array1, $k);
-    echo '<br> $res2[$i]: '; print_r($res2[$i]);
+    echo '<br> $res2: '; print_r($res2);
 
     return array_merge($res1, $res2);
 }
