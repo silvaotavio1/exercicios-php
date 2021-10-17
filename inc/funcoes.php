@@ -270,7 +270,7 @@ function verificaSubTexto($texto, $subTexto)
         echo "Elemento de impressao: " . substr($texto, $k, $k - 1) . '<br>';
 
         $aux = false;
-        if(substr($texto, $k, $tamSubTexto - $k) == $subTexto)
+        if(substr($texto, $k, $tamSubTexto + $k) == $subTexto)
         {
             // echo "<b>";
             $aux = true;
