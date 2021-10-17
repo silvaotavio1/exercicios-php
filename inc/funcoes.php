@@ -227,5 +227,8 @@ function cortarArray($array, $de, $ate) //Similar ao array_slice
         $arrayRetorno[$i] = $array[$k];
         $i++;
     }
+
+    print_r($arrayRetorno);exit;
+
     return $arrayRetorno;
 }
